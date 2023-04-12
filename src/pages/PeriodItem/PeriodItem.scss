@@ -1,0 +1,75 @@
+@use './../../styles/abstracts' as *;
+
+.period-item {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-blend-mode: exclusion;
+
+  &__content {
+    position: absolute;
+    right: 0;
+    width: 85vw;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  &__content-bg {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-blend-mode: exclusion;
+    background-position: -15vw 0;
+  }
+
+  &__quotation {
+    margin: 0;
+    position: absolute;
+    left: 16px;
+    bottom: 18vh;
+    width: 288px;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    grid-row-gap: 16px;
+    color: white;
+
+    @include mq(small) {
+      top: 18vh;
+      bottom: unset;
+      left: 18vw;
+    }
+
+    @include mq(medium) {
+      top: 18vh;
+      bottom: unset;
+      left: 18vw;
+      width: 326px;
+    }
+  }
+
+  &__quotation-text {
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    font-family: $font-italic-regular;
+    line-height: 24px;
+
+    @include mq(medium) {
+      font-size: 14px;
+    }
+  }
+
+  &__quotation-author {
+    margin: 0;
+    text-align: right;
+    font-size: 12px;
+    font-family: $font-title-semi-bold;
+
+    @include mq(medium) {
+      font-size: 16px;
+    }
+  }
+}

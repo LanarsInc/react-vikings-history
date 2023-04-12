@@ -1,0 +1,69 @@
+@use './../../styles/abstracts' as *;
+
+.info-item {
+  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-blend-mode: exclusion;
+
+  &__content {
+    width: 85vw;
+    height: 80vh;
+    overflow: hidden;
+  }
+
+  &__content-bg {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-blend-mode: exclusion;
+  }
+
+  &__article {
+    position: absolute;
+    top: 30vh;
+    left: 16px;
+    right: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+
+    @include mq(small) {
+      top: 23vh;
+      left: 8vw;
+      right: 8vw;
+      width: 75vw;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+
+    @include mq(medium) {
+      top: 23vh;
+      left: 14vw;
+      width: 65vw;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 60px;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+
+    @include mq(medium) {
+      row-gap: 24px;
+    }
+  }
+
+  &__text {
+    color: white;
+    font-size: 12px;
+    line-height: 22px;
+
+    @include mq(medium) {
+      font-size: 14px;
+    }
+  }
+}
