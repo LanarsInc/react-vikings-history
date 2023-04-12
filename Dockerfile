@@ -10,7 +10,7 @@ RUN --mount=type=secret,id=login \
     npm install -g npm-cli-login && \
     npm-cli-login -u ${login} -p ${password} -e leo@lanars.com -r https://nexus.lanars.com/repository/npm-all && \
     npm config set @leo:registry https://nexus.lanars.com/repository/npm-all/ && \
-    npm i -g npm@7 && \
+    npm i -g npm@8 && \
     if [ -z "${BUILD_TYPE}" ]; then \
         echo 'build type not set' && \
         npm ci && \
