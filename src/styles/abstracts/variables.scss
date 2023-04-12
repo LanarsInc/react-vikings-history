@@ -1,0 +1,28 @@
+@import 'fonts';
+
+// colors
+$white: #ffff;
+$black: #040912;
+$background: #d3ae7d;
+
+// fonts
+$font-italic-regular: 'RobotoSerif-RegularItalic';
+
+$font-title-semi-bold: 'RobotoSlab-SemiBold';
+$font-title-bold: 'RobotoSlab-Bold';
+$font-title-extra-bold: 'RobotoSlab-ExtraBold';
+
+$font-main-bold: 'SkModernist-Bold';
+$font-main-regular: 'SkModernist-Regular';
+
+
+$break-points: (
+  small: 600px,
+  medium: 992px,
+  large: 1350px,
+);
+
+:export {
+  whiteColor: $white;
+  blackColor: $black;
+};
