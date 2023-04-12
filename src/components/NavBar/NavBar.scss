@@ -1,0 +1,41 @@
+@use './../../styles/abstracts' as *;
+
+.nav-bar {
+  display: none;
+  position: fixed;
+  top: 20vh;
+  right: 4vw;
+  z-index: 5;
+
+  @include mq(medium) {
+   display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    row-gap: 16px;
+  }
+
+  &__list-item {
+    list-style: none;
+    font-size: 28px;
+    font-family: $font-main-bold;
+    text-decoration: none;
+    color: $white;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &.disabled {
+      pointer-events: none;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
