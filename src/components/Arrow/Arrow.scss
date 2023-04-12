@@ -1,0 +1,37 @@
+@use '../../styles/abstracts/index' as *;
+
+.arrow {
+  position: fixed;
+  right: 5px;
+  bottom: 2vh;
+  cursor: pointer;
+  scale: 0.7;
+  z-index: 5;
+
+  &.left {
+    right: unset;
+    left: 5px;
+  }
+
+  @include mq(small) {
+    scale: 0.9;
+    right: 3vw;
+    bottom: 3vh;
+
+    &.left {
+      right: unset;
+      left: 3vw;
+    }
+  }
+
+  @include mq(medium) {
+    scale: 1;
+    right: 4vw;
+    bottom: 5vh;
+
+    &.left {
+      right: unset;
+      left: 4vw;
+    }
+  }
+}
