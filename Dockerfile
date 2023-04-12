@@ -13,7 +13,7 @@ RUN --mount=type=secret,id=login \
     npm i -g npm@8 && \
     if [ -z "${BUILD_TYPE}" ]; then \
         echo 'build type not set' && \
-        npm ci && \
+        npm install && \
         npm run build; \
     fi &&\
     if [ "${BUILD_TYPE}" = "stage" ]; then \
