@@ -1,0 +1,74 @@
+@use './../../styles/abstracts' as *;
+
+.burger-menu {
+  display: block;
+
+  @include mq(medium) {
+    display: none;
+  }
+
+  &__button-wrapper {
+    @include flex-center;
+    position: absolute;
+    top: 20px;
+    left: 17px;
+    width: 22px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 12;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+
+  &__button-line {
+    width: 22px;
+    height: 1.5px;
+    background-color: $white;
+    border-radius: 5px;
+    transform-origin: left center;
+  }
+
+  &__content,
+  &__list {
+    @include flex-center;
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  &__content {
+    background-color: $white;
+    z-index: 10;
+  }
+
+  &__list {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    row-gap: 32px;
+    z-index: 11;
+  }
+
+  &__list-item {
+    list-style: none;
+    font-size: 16px;
+    font-family: $font-main-bold;
+    text-decoration: none;
+    color: $black;
+    cursor: pointer;
+  }
+
+  &__list-item-text {
+    opacity: 0.5;
+    transition: opacity 300ms;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
