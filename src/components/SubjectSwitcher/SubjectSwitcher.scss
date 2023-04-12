@@ -1,0 +1,36 @@
+@use './../../styles/abstracts' as *;
+
+.subject-switcher {
+  position: absolute;
+  top: 12vh;
+  left: 13vw;
+  text-stroke: 1px white;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  font-size: 48px;
+  font-family: $font-title-extra-bold;
+  white-space: nowrap;
+  word-break: keep-all;
+  cursor: pointer;
+  z-index: 3;
+  transition: color 500ms linear;
+
+  @include mq(small) {
+    font-size: 100px;
+    top: unset;
+    left: 13vw;
+    bottom: 7vh;
+  }
+
+  @include mq(medium) {
+    font-size: 180px;
+  }
+
+  &.culture {
+    left: 64vw;
+  }
+
+  &.active {
+    color: white;
+  }
+}
