@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Periods, TRANSITIONS } from '../../constants';
 import { periodsData } from '../../data';
 import { PeriodItemInterface } from '../../types';
-import useWindowSize from '../../hooks/useWindowSize';
+import { useWindowSize } from '../../hooks/useWindowSize';
 import './PeriodSwitcher.scss';
 
 interface PeriodSwitcherProps {

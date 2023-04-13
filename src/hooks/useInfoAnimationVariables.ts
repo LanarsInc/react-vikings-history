@@ -1,7 +1,7 @@
 import { Periods, TRANSITIONS } from '../constants';
 import { periodsData } from '../data';
 
-const useInfoAnimationVariables = (activePeriodName: Periods) => {
+export const useInfoAnimationVariables = (activePeriodName: Periods) => {
   const infoAnimationVariablesSlideFromRight = {
     mainInitial: {
       x: '100%',
@@ -10,6 +10,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       x: 0,
       transition: {
         x: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -20,6 +21,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
         x: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -68,6 +70,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       x: 0,
       transition: {
         x: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -77,6 +80,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       x: '100%',
       transition: {
         x: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -128,6 +132,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       y: 0,
       transition: {
         y: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -137,6 +142,7 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
       y: '100%',
       transition: {
         y: {
+          ease: TRANSITIONS.EASE.slide,
           delay: TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -185,5 +191,3 @@ const useInfoAnimationVariables = (activePeriodName: Periods) => {
     infoAnimationVariablesSlideFromTop,
   ];
 };
-
-export default useInfoAnimationVariables;

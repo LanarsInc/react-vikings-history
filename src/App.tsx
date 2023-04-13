@@ -10,7 +10,7 @@ import InfoItem from './pages/InfoItem';
 import { Countries, Periods, Subjects } from './constants';
 import { data, periodsData } from './data';
 import { InfoItemInterface, PeriodItemInterface } from './types';
-import useInfoAnimationVariables from './hooks/useInfoAnimationVariables';
+import { useInfoAnimationVariables } from './hooks/useInfoAnimationVariables';
 import BurgerMenu from './components/BurgerMenu';
 
 const App: FC = () => {
@@ -199,7 +199,7 @@ const App: FC = () => {
             />
           ) : (
             <InfoItem
-              key={currentInfo.primaryColor + currentInfo.secondaryColor}
+              key={currentInfo.imagePath}
               variants={infoAnimationVariant}
               primaryColor={currentInfo.primaryColor}
               secondaryColor={currentInfo.secondaryColor}
