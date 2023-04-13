@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:19-alpine3.17 AS BUILDER
+FROM node:14.18-alpine AS BUILDER
 WORKDIR /opt/frontend
 COPY . /opt/frontend/
 RUN --mount=type=secret,id=login \
