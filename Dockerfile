@@ -38,6 +38,6 @@ RUN set -xe && \
     chown -R user:user /home/user/ /var/run/ /opt /var/cache/nginx && \
     chmod -R 777 /tmp/ /var/log/ && \
     echo 'user ALL=(ALL) NOPASSWD: /usr/bin/tee, /bin/ln, /bin/sed, /bin/bash' >> /etc/sudoers.d/user USER user
-USER user
+#USER user
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["nginx", "-g", "daemon off;"]
