@@ -1,43 +1,38 @@
 import { Periods, TRANSITIONS } from '../constants';
 import { periodsData } from '../data';
 
-export const useInfoAnimationVariables = (activePeriodName: Periods) => {
+function useInfoAnimationVariables(activePeriodName: Periods) {
+  const slideTransition = {
+    ease: TRANSITIONS.EASE.slide,
+    delay: TRANSITIONS.DELAY.slide,
+    duration: TRANSITIONS.DURATION.slide,
+  };
+
+  const backgroundColorTransition = {
+    delay: TRANSITIONS.DELAY.backgroundColor,
+    duration: TRANSITIONS.DURATION.backgroundColor,
+  };
+
   const infoAnimationVariablesSlideFromRight = {
-    mainInitial: {
-      x: '100%',
-    },
+    mainInitial: { x: '100%' },
     mainAnimate: {
       x: 0,
       transition: {
-        x: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
+        x: slideTransition,
       },
     },
     mainExit: {
       x: '100%',
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
-        x: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        x: slideTransition,
+        backgroundColor: backgroundColorTransition,
       },
     },
     contentBgExit: {
       backgroundColor: periodsData[activePeriodName].secondaryColor,
       transition: {
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        backgroundColor: backgroundColorTransition,
       },
     },
     textInitial: {
@@ -50,6 +45,8 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
       transition: {
         duration: 0.5,
         delay,
+        type: 'spring',
+        stiffness: 100,
       },
     }),
     textExit: (delay: number) => ({
@@ -63,40 +60,24 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
   };
 
   const infoAnimationVariablesSlideFromLeft = {
-    mainInitial: {
-      x: '-100%',
-    },
+    mainInitial: { x: '-100%' },
     mainAnimate: {
       x: 0,
       transition: {
-        x: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
+        x: slideTransition,
       },
     },
     mainExit: {
       x: '100%',
       transition: {
-        x: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        x: slideTransition,
+        backgroundColor: backgroundColorTransition,
       },
     },
     contentBgExit: {
       clipPath: 'inset(0 100% 0 0)',
       transition: {
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        backgroundColor: backgroundColorTransition,
         clipPath: {
           duration: 0.5,
         },
@@ -112,6 +93,8 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
       transition: {
         duration: 0.5,
         delay,
+        type: 'spring',
+        stiffness: 100,
       },
     }),
     textExit: (delay: number) => ({
@@ -125,40 +108,24 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
   };
 
   const infoAnimationVariablesSlideFromTop = {
-    mainInitial: {
-      y: '-100%',
-    },
+    mainInitial: { y: '-100%' },
     mainAnimate: {
       y: 0,
       transition: {
-        y: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
+        y: slideTransition,
       },
     },
     mainExit: {
       y: '100%',
       transition: {
-        y: {
-          ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
-          duration: TRANSITIONS.DURATION.slide,
-        },
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        y: slideTransition,
+        backgroundColor: backgroundColorTransition,
       },
     },
     contentBgExit: {
       clipPath: 'inset(0 0 100% 0)',
       transition: {
-        backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
-          duration: TRANSITIONS.DURATION.backgroundColor,
-        },
+        backgroundColor: backgroundColorTransition,
         clipPath: {
           duration: 0.5,
         },
@@ -174,6 +141,8 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
       transition: {
         duration: 0.5,
         delay: 1,
+        type: 'spring',
+        stiffness: 100,
       },
     },
     textExit: {
@@ -190,4 +159,6 @@ export const useInfoAnimationVariables = (activePeriodName: Periods) => {
     infoAnimationVariablesSlideFromLeft,
     infoAnimationVariablesSlideFromTop,
   ];
-};
+}
+
+export default useInfoAnimationVariables;

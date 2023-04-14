@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import clsx from 'clsx';
-import { Countries } from '../../constants';
+import { Countries, TRANSITIONS } from '../../constants';
 import './NavBar.scss';
 
 interface NavBarProps {
@@ -9,6 +9,16 @@ interface NavBarProps {
 }
 
 const NavBar: FC<NavBarProps> = ({ activeCountry, handleCountryChange }) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const onCountryClick = (selectedCountry: Countries) => {
+    setIsDisabled(true);
+    handleCountryChange(selectedCountry);
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, (TRANSITIONS.DURATION.slide + TRANSITIONS.DELAY.slide) * 1000);
+  };
+
   return (
     <nav className="nav-bar">
       <ul className="nav-bar__list">
@@ -17,8 +27,9 @@ const NavBar: FC<NavBarProps> = ({ activeCountry, handleCountryChange }) => {
             key={country}
             className={clsx('nav-bar__list-item', {
               active: activeCountry === country,
+              disabled: isDisabled,
             })}
-            onClick={() => handleCountryChange(country)}
+            onClick={() => onCountryClick(country)}
           >
             {country}
           </li>

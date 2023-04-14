@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { motion as m } from 'framer-motion';
 import clsx from 'clsx';
 import { Subjects } from '../../constants';
@@ -13,6 +13,16 @@ const SubjectSwitcher: FC<SubjectSwitcherProps> = ({
   activeSubject,
   handleSubjectChange,
 }) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const onSubjectClick = (selectedSubject: Subjects) => {
+    setIsDisabled(true);
+    handleSubjectChange(selectedSubject);
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, 1500);
+  };
+
   const getPositionXAnimate = (subject: Subjects) => {
     if (subject === Subjects.History) {
       return activeSubject === subject ? 0 : '-50%';
@@ -47,13 +57,15 @@ const SubjectSwitcher: FC<SubjectSwitcherProps> = ({
             opacity: 0,
             transition: {
               duration: 1,
+              delay: subject === Subjects.Culture ? 0.1 : 0,
             },
           }}
           className={clsx('subject-switcher', {
             active: subject === activeSubject,
+            disabled: isDisabled,
             culture: subject === Subjects.Culture,
           })}
-          onClick={() => handleSubjectChange(subject)}
+          onClick={() => onSubjectClick(subject)}
         >
           {subject}
         </m.h3>

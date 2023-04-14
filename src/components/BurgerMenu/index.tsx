@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react';
 import { AnimatePresence, motion as m } from 'framer-motion';
 import clsx from 'clsx';
-import { Countries } from '../../constants';
+import { Countries, MENU_TIMEOUT_DELAY } from '../../constants';
 import './BurgerMenu.scss';
 
 interface BurgerMenuProps {
@@ -24,20 +24,21 @@ const BurgerMenu: FC<BurgerMenuProps> = ({
       () => {
         setIsTransition(isMenuOpen);
       },
-      isMenuOpen ? 0 : 400
+      isMenuOpen ? 0 : MENU_TIMEOUT_DELAY
     );
   }, [isMenuOpen]);
 
   const buttonLineVariants = {
+    // TODO: find way to reuse scss color variables
     topAnimate: {
       rotate: isTransition ? '45deg' : 0,
       translate: isTransition ? '2px -6px' : 0,
-      backgroundColor: isTransition ? 'black' : 'white',
+      backgroundColor: isTransition ? '#040912' : '#ffff',
     },
     bottomAnimate: {
       rotate: isTransition ? '-45deg' : 0,
       translate: isTransition ? '2px 4px' : 0,
-      backgroundColor: isTransition ? 'black' : 'white',
+      backgroundColor: isTransition ? '#040912' : '#ffff',
     },
   };
 

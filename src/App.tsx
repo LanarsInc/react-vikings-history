@@ -1,17 +1,17 @@
 import React, { FC, useEffect, useState } from 'react';
-import { AnimatePresence, Variants, LayoutGroup } from 'framer-motion';
+import { AnimatePresence, Variants } from 'framer-motion';
 import Logo from './components/Logo';
 import Arrow from './components/Arrow';
 import NavBar from './components/NavBar';
+import BurgerMenu from './components/BurgerMenu';
 import PeriodSwitcher from './components/PeriodSwitcher';
 import SubjectSwitcher from './components/SubjectSwitcher';
 import PeriodItem from './pages/PeriodItem';
 import InfoItem from './pages/InfoItem';
-import { Countries, Periods, Subjects } from './constants';
+import { Countries, MENU_TIMEOUT_DELAY, Periods, Subjects } from './constants';
 import { data, periodsData } from './data';
 import { InfoItemInterface, PeriodItemInterface } from './types';
-import { useInfoAnimationVariables } from './hooks/useInfoAnimationVariables';
-import BurgerMenu from './components/BurgerMenu';
+import useInfoAnimationVariables from './hooks/useInfoAnimationVariables';
 
 const App: FC = () => {
   const [period, setPeriod] = useState(periodsData[Periods.Viking]);
@@ -43,30 +43,11 @@ const App: FC = () => {
 
   useEffect(() => {
     if (country) {
-      const neededInfo = data[period.name]?.[subject]?.[country];
-      setCurrentInfo(neededInfo);
+      setCurrentInfo(data[period.name]?.[subject]?.[country]);
     } else {
       setCurrentInfo(null);
     }
   }, [period.name, subject, country]);
-
-  const handleSubjectChange = (newSubject: Subjects) => {
-    if (country) {
-      setSubject(newSubject);
-      setInfoAnimationVariant({
-        ...infoAnimationVariablesSlideFromTop,
-        mainExit: {
-          ...infoAnimationVariablesSlideFromTop.mainExit,
-          backgroundColor: data[period.name][newSubject][country].primaryColor,
-        },
-        contentBgExit: {
-          ...infoAnimationVariablesSlideFromTop.contentBgExit,
-          backgroundColor:
-            data[period.name][newSubject][country].secondaryColor,
-        },
-      });
-    }
-  };
 
   const handleCountryChange = (selectedCountry: Countries) => {
     if (country) {
@@ -101,12 +82,30 @@ const App: FC = () => {
     }
   };
 
+  const handleSubjectChange = (newSubject: Subjects) => {
+    if (country) {
+      setSubject(newSubject);
+      setInfoAnimationVariant({
+        ...infoAnimationVariablesSlideFromTop,
+        mainExit: {
+          ...infoAnimationVariablesSlideFromTop.mainExit,
+          backgroundColor: data[period.name][newSubject][country].primaryColor,
+        },
+        contentBgExit: {
+          ...infoAnimationVariablesSlideFromTop.contentBgExit,
+          backgroundColor:
+            data[period.name][newSubject][country].secondaryColor,
+        },
+      });
+    }
+  };
+
   const handleMenuItemClick = (selectedCountry: Countries) => {
     handleCountryChange(selectedCountry);
 
     setTimeout(() => {
       setMenuIsOpen(false);
-    }, 400);
+    }, MENU_TIMEOUT_DELAY);
   };
 
   const handlePeriodChange = (newPeriod: PeriodItemInterface) => {
@@ -182,33 +181,31 @@ const App: FC = () => {
         handlePeriodChange={handlePeriodChange}
       />
 
-      <LayoutGroup>
-        <AnimatePresence initial={false}>
-          {!currentInfo ? (
-            <PeriodItem
-              key={period.imagePath}
-              isLeftSection={period.name === Periods.Viking}
-              isCountry={!!country}
-              periodAnimateX={periodAnimateX}
-              nextColors={periodPageNextColors}
-              primaryColor={period.primaryColor}
-              secondaryColor={period.secondaryColor}
-              imagePath={period.imagePath}
-              quotationText={period.quotationText}
-              quotationAuthor={period.quotationAuthor}
-            />
-          ) : (
-            <InfoItem
-              key={currentInfo.imagePath}
-              variants={infoAnimationVariant}
-              primaryColor={currentInfo.primaryColor}
-              secondaryColor={currentInfo.secondaryColor}
-              imagePath={currentInfo.imagePath}
-              textBlocks={currentInfo.textBlocks}
-            />
-          )}
-        </AnimatePresence>
-      </LayoutGroup>
+      <AnimatePresence initial={false}>
+        {!currentInfo ? (
+          <PeriodItem
+            key={period.imagePath}
+            isLeftSection={period.name === Periods.Viking}
+            isCountry={!!country}
+            periodAnimateX={periodAnimateX}
+            nextColors={periodPageNextColors}
+            primaryColor={period.primaryColor}
+            secondaryColor={period.secondaryColor}
+            imagePath={period.imagePath}
+            quotationText={period.quotationText}
+            quotationAuthor={period.quotationAuthor}
+          />
+        ) : (
+          <InfoItem
+            key={currentInfo.imagePath}
+            variants={infoAnimationVariant}
+            primaryColor={currentInfo.primaryColor}
+            secondaryColor={currentInfo.secondaryColor}
+            imagePath={currentInfo.imagePath}
+            textBlocks={currentInfo.textBlocks}
+          />
+        )}
+      </AnimatePresence>
     </main>
   );
 };

@@ -19,7 +19,7 @@
     font-size: 100px;
     top: unset;
     left: 13vw;
-    bottom: 7vh;
+    bottom: 6vh;
   }
 
   @include mq(medium) {
@@ -32,5 +32,9 @@
 
   &.active {
     color: white;
+  }
+
+  &.disabled {
+    pointer-events: none;
   }
 }

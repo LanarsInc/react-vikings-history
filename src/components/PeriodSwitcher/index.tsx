@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Periods, TRANSITIONS } from '../../constants';
 import { periodsData } from '../../data';
 import { PeriodItemInterface } from '../../types';
-import { useWindowSize } from '../../hooks/useWindowSize';
+import useWindowSize from '../../hooks/useWindowSize';
 import './PeriodSwitcher.scss';
 
 interface PeriodSwitcherProps {
@@ -33,6 +33,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   };
 
   const getMoveUpAnimateVariant = () => {
+    // TODO: find way to reuse scss variables for screen width
     if (width > 992) {
       return {
         left: '14vw',

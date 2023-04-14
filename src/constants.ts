@@ -15,6 +15,8 @@ export enum Subjects {
   Culture = 'Culture',
 }
 
+export const MENU_TIMEOUT_DELAY = 400;
+
 export const TRANSITIONS = {
   DURATION: {
     slide: 1,
