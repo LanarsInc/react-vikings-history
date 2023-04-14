@@ -2,10 +2,12 @@ import { Periods, TRANSITIONS } from '../constants';
 import { periodsData } from '../data';
 
 function useInfoAnimationVariables(activePeriodName: Periods) {
-  const slideTransition = {
-    ease: TRANSITIONS.EASE.slide,
-    delay: TRANSITIONS.DELAY.slide,
-    duration: TRANSITIONS.DURATION.slide,
+  const getSlideTransition = (increaseDelay = 0) => {
+    return {
+      ease: TRANSITIONS.EASE.slide,
+      delay: TRANSITIONS.DELAY.slide + increaseDelay,
+      duration: TRANSITIONS.DURATION.slide,
+    };
   };
 
   const backgroundColorTransition = {
@@ -18,14 +20,14 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     mainAnimate: {
       x: 0,
       transition: {
-        x: slideTransition,
+        x: getSlideTransition(),
       },
     },
     mainExit: {
       x: '100%',
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
-        x: slideTransition,
+        x: getSlideTransition(0.02),
         backgroundColor: backgroundColorTransition,
       },
     },
@@ -64,13 +66,13 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     mainAnimate: {
       x: 0,
       transition: {
-        x: slideTransition,
+        x: getSlideTransition(),
       },
     },
     mainExit: {
       x: '100%',
       transition: {
-        x: slideTransition,
+        x: getSlideTransition(0.02),
         backgroundColor: backgroundColorTransition,
       },
     },
@@ -112,13 +114,13 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     mainAnimate: {
       y: 0,
       transition: {
-        y: slideTransition,
+        y: getSlideTransition(),
       },
     },
     mainExit: {
       y: '100%',
       transition: {
-        y: slideTransition,
+        y: getSlideTransition(0.02),
         backgroundColor: backgroundColorTransition,
       },
     },

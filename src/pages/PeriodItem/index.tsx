@@ -49,7 +49,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       transition: {
         x: {
           ease: TRANSITIONS.EASE.slide,
-          delay: TRANSITIONS.DELAY.slide,
+          delay: TRANSITIONS.DELAY.slide + 0.02,
           duration: TRANSITIONS.DURATION.slide,
         },
         backgroundColor: {
