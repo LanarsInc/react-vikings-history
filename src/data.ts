@@ -1,28 +1,28 @@
 import { Countries, Periods, Subjects } from './constants';
 import { DataInterface, PeriodsDataInterface } from './types';
 
-import VikingAgeImagePath from './assets/images/VikingAge/main.png';
-import AssimilationImagePath from './assets/images/Assimilation/main.png';
+import VikingAgeImagePath from './assets/images/VikingAge/main.webp';
+import AssimilationImagePath from './assets/images/Assimilation/main.webp';
 
-import VikingAgeHistoryNorwayImage from './assets/images/VikingAge/History/norway.png';
-import VikingAgeHistorySwedenImage from './assets/images/VikingAge/History/sweden.png';
-import VikingAgeHistoryDenmarkImage from './assets/images/VikingAge/History/denmark.png';
-import VikingAgeHistoryNordenImage from './assets/images/VikingAge/History/norden.png';
+import VikingAgeHistoryNorwayImage from './assets/images/VikingAge/History/norway.webp';
+import VikingAgeHistorySwedenImage from './assets/images/VikingAge/History/sweden.webp';
+import VikingAgeHistoryDenmarkImage from './assets/images/VikingAge/History/denmark.webp';
+import VikingAgeHistoryNordenImage from './assets/images/VikingAge/History/norden.webp';
 
-import VikingAgeCultureNorwayImage from './assets/images/VikingAge/Culture/norway.png';
-import VikingAgeCultureSwedenImage from './assets/images/VikingAge/Culture/sweden.png';
-import VikingAgeCultureDenmarkImage from './assets/images/VikingAge/Culture/denmark.png';
-import VikingAgeCultureNordenImage from './assets/images/VikingAge/Culture/norden.png';
+import VikingAgeCultureNorwayImage from './assets/images/VikingAge/Culture/norway.webp';
+import VikingAgeCultureSwedenImage from './assets/images/VikingAge/Culture/sweden.webp';
+import VikingAgeCultureDenmarkImage from './assets/images/VikingAge/Culture/denmark.webp';
+import VikingAgeCultureNordenImage from './assets/images/VikingAge/Culture/norden.webp';
 
-import AssimilationHistoryNorwayImage from './assets/images/Assimilation/History/norway.png';
-import AssimilationHistorySwedenImage from './assets/images/Assimilation/History/sweden.png';
-import AssimilationHistoryDenmarkImage from './assets/images/Assimilation/History/denmark.png';
-import AssimilationHistoryNordenImage from './assets/images/Assimilation/History/norden.png';
+import AssimilationHistoryNorwayImage from './assets/images/Assimilation/History/norway.webp';
+import AssimilationHistorySwedenImage from './assets/images/Assimilation/History/sweden.webp';
+import AssimilationHistoryDenmarkImage from './assets/images/Assimilation/History/denmark.webp';
+import AssimilationHistoryNordenImage from './assets/images/Assimilation/History/norden.webp';
 
-import AssimilationCultureNorwayImage from './assets/images/Assimilation/Culture/norway.png';
-import AssimilationCultureSwedenImage from './assets/images/Assimilation/Culture/sweden.png';
-import AssimilationCultureDenmarkImage from './assets/images/Assimilation/Culture/denmark.png';
-import AssimilationCultureNordenImage from './assets/images/Assimilation/Culture/norden.png';
+import AssimilationCultureNorwayImage from './assets/images/Assimilation/Culture/norway.webp';
+import AssimilationCultureSwedenImage from './assets/images/Assimilation/Culture/sweden.webp';
+import AssimilationCultureDenmarkImage from './assets/images/Assimilation/Culture/denmark.webp';
+import AssimilationCultureNordenImage from './assets/images/Assimilation/Culture/norden.webp';
 
 export const periodsData: PeriodsDataInterface = {
   [Periods.Viking]: {
