@@ -4,7 +4,6 @@ import { periodsData } from '../data';
 function useInfoAnimationVariables(activePeriodName: Periods) {
   const getSlideTransition = (increaseDelay = 0) => {
     return {
-      ease: TRANSITIONS.EASE.slide,
       delay: TRANSITIONS.DELAY.slide + increaseDelay,
       duration: TRANSITIONS.DURATION.slide,
     };
