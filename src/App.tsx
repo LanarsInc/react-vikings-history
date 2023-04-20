@@ -14,6 +14,7 @@ import { InfoItemInterface, PeriodItemInterface } from './types';
 import useInfoAnimationVariables from './hooks/useInfoAnimationVariables';
 
 const App: FC = () => {
+  const [prevPeriod, setPrevPeriod] = useState<Periods | null>(null);
   const [period, setPeriod] = useState(periodsData[Periods.Viking]);
   const [subject, setSubject] = useState(Subjects.History);
   const [country, setCountry] = useState<Countries | null>(null);
@@ -49,11 +50,12 @@ const App: FC = () => {
     }
   }, [period.name, subject, country]);
 
-  const handleCountryChange = (selectedCountry: Countries) => {
-    if (country) {
-      if (country === selectedCountry) {
+  const handleCountryChange = (selectedCountry: Countries | null) => {
+    if (country || !selectedCountry) {
+      if (country === selectedCountry || !selectedCountry) {
         setInfoAnimationVariant(infoAnimationVariablesSlideFromRight);
         setCountry(null);
+        setSubject(Subjects.History);
         setPeriodAnimateX('-100%');
       } else {
         setCountry(selectedCountry);
@@ -109,6 +111,7 @@ const App: FC = () => {
   };
 
   const handlePeriodChange = (newPeriod: PeriodItemInterface) => {
+    setPrevPeriod(period.name);
     setPeriodAnimateX('100%');
     setPeriodPageNextColors({
       primaryColor: newPeriod.primaryColor,
@@ -138,9 +141,14 @@ const App: FC = () => {
     }
   };
 
+  const handleLogoClick = () => {
+    handleCountryChange(country);
+    handlePeriodChange(periodsData[Periods.Viking]);
+  };
+
   return (
     <main className="home">
-      <Logo isMenuOpen={isMenuOpen} />
+      <Logo isMenuOpen={isMenuOpen} handleLogoClick={handleLogoClick} />
 
       <BurgerMenu
         isMenuOpen={isMenuOpen}
@@ -175,11 +183,14 @@ const App: FC = () => {
         )}
       </AnimatePresence>
 
-      <PeriodSwitcher
-        isCountry={!!country}
-        activePeriodName={period.name}
-        handlePeriodChange={handlePeriodChange}
-      />
+      <AnimatePresence initial={false}>
+        <PeriodSwitcher
+          isCountry={!!country}
+          prevPeriod={prevPeriod}
+          activePeriodName={period.name}
+          handlePeriodChange={handlePeriodChange}
+        />
+      </AnimatePresence>
 
       <AnimatePresence initial={false}>
         {!currentInfo ? (

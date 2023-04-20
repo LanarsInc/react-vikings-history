@@ -3,11 +3,11 @@
 .period-switcher {
   position: absolute;
   bottom: 80vh;
-  left: 12vw;
+  left: 4vw;
   text-stroke: 1px white;
   -webkit-text-stroke: 1px white;
   color: transparent;
-  font-size: 48px;
+  font-size: 42px;
   font-family: $font-title-extra-bold;
   white-space: nowrap;
   word-break: keep-all;
@@ -15,35 +15,31 @@
   transition: color 500ms linear;
   z-index: 2;
 
-  &.right {
-    left: 72vw;
-
-    @include mq(small) {
-      left: 78vw;
-    }
-
-    @include mq(medium) {
-      left: 82vw;
-    }
-  }
-
-  &.active {
-    color: $white;
-  }
-
-  &.isCountry.active {
-    font-family: $font-title-bold;
+  @include mq(extraSmall) {
+    left: 8vw;
+    font-size: 48px;
   }
 
   @include mq(small) {
     font-size: 100px;
     bottom: 12vh;
-    left: 12vw;
   }
 
   @include mq(medium) {
-    font-size: 180px;
-    bottom: 6vh;
+    font-size: 140px;
     left: 12vw;
+    bottom: 10vh;
+  }
+
+  @include mq(large) {
+    font-size: 180px;
+  }
+
+  &.right {
+    left: 85vw;
+  }
+
+  &.active {
+    color: $white;
   }
 }

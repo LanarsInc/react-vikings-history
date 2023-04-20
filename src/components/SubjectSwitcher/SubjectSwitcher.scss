@@ -2,8 +2,8 @@
 
 .subject-switcher {
   position: absolute;
-  top: 12vh;
-  left: 13vw;
+  bottom: 80vh;
+  left: 4vw;
   text-stroke: 1px white;
   -webkit-text-stroke: 1px white;
   color: transparent;
@@ -15,14 +15,22 @@
   z-index: 3;
   transition: color 500ms linear;
 
+  @include mq(extraSmall) {
+    left: 8vw;
+  }
+
   @include mq(small) {
     font-size: 100px;
-    top: unset;
-    left: 13vw;
-    bottom: 6vh;
+    bottom: 12vh;
   }
 
   @include mq(medium) {
+    font-size: 140px;
+    left: 12vw;
+    bottom: 10vh;
+  }
+
+  @include mq(large) {
     font-size: 180px;
   }
 

@@ -11,8 +11,20 @@
     position: absolute;
     right: 0;
     width: 85vw;
-    height: 80vh;
+    height: 92vh;
     overflow: hidden;
+
+    @include mq(extraSmall) {
+      height: 88vh;
+    }
+
+    @include mq(small) {
+      height: 80vh;
+    }
+
+    @include mq(medium) {
+      height: 78vh;
+    }
   }
 
   &__content-bg {

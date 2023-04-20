@@ -72,9 +72,9 @@ export const data: DataInterface = {
           left: [
             'The Viking Age, which lasted from 793 to 1066 AD, was a period of significant historical importance in Sweden. During this time, Swedish Vikings played a crucial role in shaping the history of Scandinavia, Europe, and even parts of the Middle East.',
             'At the start of the Viking Age, Sweden was divided into several small kingdoms, each ruled by a local chieftain. These chieftains and their warriors, who were collectively known as Vikings, were renowned for their seafaring skills and their raids on coastal towns and villages throughout Europe.',
-            'Swedish Viking traders were known for their long-distance trade, particularly with the Byzantine Empire.',
           ],
           right: [
+            'Swedish Viking traders were known for their long-distance trade, particularly with the Byzantine Empire.',
             'They traveled down the Volga River to Constantinople, where they traded furs, honey, and slaves for silver, silk, and spices.',
             'One of the most famous Swedish Vikings was Rurik. Other notable Viking leaders include Erik the Victorious, who united the small kingdoms of Sweden into a single state.',
           ],
@@ -132,9 +132,9 @@ export const data: DataInterface = {
           left: [
             'One of the defining features of Viking culture in Sweden was their art. The Vikings were skilled metalworkers, and they used their expertise to create intricate pieces of jewelry, weapons, household items. They also carved intricate designs into wood and stone, creating some of the most impressive artwork of the time.',
             'Old Norse was also the language spoken in Sweden during the Viking Age, and it was the ancestor of modern Scandinavian languages.',
-            'Sweden is home to many runestones, which were erected during the Viking Age as memorials or to commemorate important events. They are inscribed with runes, an early form of writing.',
           ],
           right: [
+            'Sweden is home to many runestones, which were erected during the Viking Age as memorials or to commemorate important events. They are inscribed with runes, an early form of writing.',
             'Another significant aspect of Viking culture in Sweden was their religion. The Vikings worshipped a pantheon of gods and goddesses, such as Odin, Thor, and Freyja. They believed in an afterlife in Valhalla, where the bravest warriors went after they died in battle. To honor their gods, the Vikings built elaborate temples and performed complex rituals.',
           ],
         },
@@ -147,9 +147,9 @@ export const data: DataInterface = {
           left: [
             'The Viking Age in Denmark lasted from 793 to 1066 and was a time of significant cultural, social, and economic change. During this period, Danish Vikings, also known as Norsemen, traveled widely, engaging in trade and raiding across Europe and beyond.',
             'The Danish Vikings, like their Scandinavian counterparts, worshipped a pantheon of gods, including Odin, Thor, and Freya. They also believed in an afterlife in Valhalla.',
-            'Danish Viking art was characterized by intricate designs and motifs, often featuring animals and mythological figures. Metalwork, such as jewelry and weapons, was highly prized.',
           ],
           right: [
+            'Danish Viking art was characterized by intricate designs and motifs, often featuring animals and mythological figures. Metalwork, such as jewelry and weapons, was highly prized.',
             'Denmark is home to many runestones, which were erected during the Viking Age as memorials or to commemorate important events. They are inscribed with runes, an early form of writing.',
           ],
         },
@@ -161,9 +161,10 @@ export const data: DataInterface = {
         textBlocks: {
           left: [
             'The Viking Age also saw the emergence of a rich literary tradition in Norden, with the composition of sagas, poems, and stories that have become an essential part of the region\'s cultural identity. These tales include the story of Beowulf, a legendary hero who battles a monstrous creature, and the epic poem "The Tale of Ragnar\'s Sons," which recounts the adventures of a group of Viking warriors.',
-            "In addition to their material culture, the Vikings from Norden also left behind a legacy of political and economic institutions. The Icelandic Althing, established in 930 AD, is considered the world's oldest parliament and continues to function to this day. The Viking Age also saw the development of a complex system of trade and commerce, with the Vikings establishing trade networks that spanned the globe.",
+            "In addition to their material culture, the Vikings from Norden also left behind a legacy of political and economic institutions. The Icelandic Althing, established in 930 AD, is considered the world's oldest parliament and continues to function to this day.",
           ],
           right: [
+            'The Viking Age also saw the development of a complex system of trade and commerce, with the Vikings establishing trade networks that spanned the globe.',
             'Viking Age architecture in Norden included the construction of wooden fortresses, bridges, and stave churches, as well as the development of burial mounds.',
           ],
         },
@@ -180,9 +181,9 @@ export const data: DataInterface = {
           left: [
             'The Viking assimilation period, also known as the Christianization of Norway, began in the late 10th century and lasted until the mid-11th century. During this period, Norway underwent significant changes in its political, social, and religious structures.',
             'One of the most notable events of this period was the introduction of Christianity to Norway. The conversion was a gradual process that took place over several decades and was largely spearheaded by the ruling class, including King Olaf Tryggvason and King Olaf II Haraldsson.',
-            "The Vikings continued to raid and trade throughout Europe, and Norway's rulers maintained close ties with other European powers, including Denmark, England, and Germany.",
           ],
           right: [
+            "The Vikings continued to raid and trade throughout Europe, and Norway's rulers maintained close ties with other European powers, including Denmark, England, and Germany.",
             "This period also saw significant changes in Norway's political landscape. The traditional Viking chieftains were gradually replaced by a centralized monarchy under the rule of the Norwegian kings. This shift was facilitated in part by the Christian church, which sought to exert its influence over the ruling class and to promote a more stable and orderly society.",
           ],
         },
@@ -194,9 +195,10 @@ export const data: DataInterface = {
         textBlocks: {
           left: [
             'The Viking assimilation period in Sweden began in the late 1000s, and it was a time of significant cultural change. During this period, the old pagan religion was gradually replaced by Christianity, and Swedish society became more settled and less focused on raiding and pillaging.',
-            'One of the most significant changes during this period was the introduction of Christianity, which had a profound impact on Swedish culture. Churches and monasteries were built throughout the country, and Christian beliefs began to replace traditional pagan practices. The introduction of Christianity also brought new cultural practices, such as the use of Latin in religious texts and the adoption of Christian holidays.',
+            'One of the most significant changes during this period was the introduction of Christianity, which had a profound impact on Swedish culture. Churches and monasteries were built throughout the country, and Christian beliefs began to replace traditional pagan practices.',
           ],
           right: [
+            'The introduction of Christianity also brought new cultural practices, such as the use of Latin in religious texts and the adoption of Christian holidays.',
             'In addition to the introduction of Christianity, the Viking assimilation period also saw the consolidation of political power in Sweden. The country was divided into several small kingdoms, but during this period, some of these kingdoms began to merge and form larger, more powerful entities. This consolidation of power helped to create a more stable and unified society, which in turn allowed for greater cultural and economic growth.',
           ],
         },
@@ -209,9 +211,9 @@ export const data: DataInterface = {
           left: [
             'The Viking assimilation period in Denmark, which began in the late 10th century and continued until the early 12th century, was marked by significant political and cultural changes.',
             'In the late 10th century, Denmark was ruled by Harald Bluetooth, who played a significant role in the spread of Christianity throughout the country. He converted to Christianity in the 960s and promoted its adoption throughout his kingdom, although it was not fully embraced by the population until the following century.',
-            'The country was divided into several small kingdoms, and there was a constant struggle for power between rival factions. This period saw the rise of several powerful families, including the Jelling dynasty, which ruled Denmark from the late 10th to the mid-11th century.',
           ],
           right: [
+            'The country was divided into several small kingdoms, and there was a constant struggle for power between rival factions. This period saw the rise of several powerful families, including the Jelling dynasty, which ruled Denmark from the late 10th to the mid-11th century.',
             "One notable event that occurred during the Viking assimilation period was the Norman Conquest of England in 1066, which had significant implications for Denmark. Many Danish warriors fought in the Battle of Hastings alongside the Anglo-Saxons, and the defeat of the English king, Harold Godwinson, had implications for Denmark's own power struggles.",
           ],
         },
@@ -223,9 +225,10 @@ export const data: DataInterface = {
         textBlocks: {
           left: [
             'The Viking assimilation period, which began in the late 10th century, was a time of significant cultural change throughout the Nordic region, including Denmark. One of the most significant changes during this period was the gradual conversion of the Nordic peoples from their traditional pagan beliefs to Christianity.',
-            'In addition to religious changes, the Viking assimilation period also saw significant developments in trade, agriculture, and urbanization. This led to the growth of towns and cities, the development of trade networks, and the emergence of a more urbanized culture. The Vikings, who had traditionally been known for their seafaring and raiding, began to focus more on trade, and this led to the growth of economic and cultural exchange between different parts of the Nordic region.',
+            'In addition to religious changes, the Viking assimilation period also saw significant developments in trade, agriculture, and urbanization. This led to the growth of towns and cities, the development of trade networks, and the emergence of a more urbanized culture.',
           ],
           right: [
+            ' The Vikings, who had traditionally been known for their seafaring and raiding, began to focus more on trade, and this led to the growth of economic and cultural exchange between different parts of the Nordic region.',
             'Another important aspect of Nordic culture during the Viking assimilation period was the emergence of a more centralized political structure. As the various Nordic peoples began to come under the influence of larger, more powerful kingdoms such as Denmark, Norway, and Sweden, there was a shift towards a more unified culture and political system. This led to the development of a shared Nordic identity.',
           ],
         },
@@ -284,9 +287,9 @@ export const data: DataInterface = {
           left: [
             'During the late 1000s, the culture in Norden was undergoing significant changes as the Viking Age was drawing to a close. The process of assimilation of the Vikings into the broader European culture was already underway, and the influence of Christianity was spreading throughout the region.',
             'One of the key factors in this assimilation process was the adoption of Christianity as the dominant religion in the region. By the late 1000s, Nordic countries had converted to Christianity, although some regions continued to practice their traditional pagan religions.',
-            'Growing influence of trade and commerce was led to the development of new trading networks and partnerships with other European regions, which further exposed the Nordics to outside influences and ideas.',
           ],
           right: [
+            'Growing influence of trade and commerce was led to the development of new trading networks and partnerships with other European regions, which further exposed the Nordics to outside influences and ideas.',
             "Despite these changes, many aspects of traditional Nordic culture persisted during this period. For example, Norse mythology continued to play a significant role in the region's art and literature, and elements of traditional Viking culture such as shipbuilding, seafaring, and raiding remained important parts of the region's identity.",
           ],
         },

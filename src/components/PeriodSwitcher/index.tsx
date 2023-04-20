@@ -9,6 +9,7 @@ import './PeriodSwitcher.scss';
 
 interface PeriodSwitcherProps {
   isCountry: boolean;
+  prevPeriod: Periods | null;
   activePeriodName: string;
   handlePeriodChange: (period: PeriodItemInterface) => void;
 }
@@ -17,24 +18,34 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   activePeriodName,
   isCountry,
   handlePeriodChange,
+  prevPeriod,
 }) => {
   const { width } = useWindowSize();
 
   const getNoCountryLeftPositionAnimate = (period: Periods) => {
+    // TODO: find way to reuse scss variables for screen width
     if (activePeriodName === period) {
-      return period === Periods.Viking ? '12vw' : '12vw';
+      if (width > 600) {
+        return '12vw';
+      }
+
+      if (width > 450) {
+        return '8vw';
+      }
+
+      return '4vw';
     }
 
     if (period === Periods.Viking) {
-      return '-60vw';
+      return width > 450 ? '-60vw' : '-71vw';
     }
 
-    return '82vw';
+    return '85vw';
   };
 
   const getMoveUpAnimateVariant = () => {
     // TODO: find way to reuse scss variables for screen width
-    if (width > 992) {
+    if (width > 1050) {
       return {
         left: '14vw',
         bottom: 'unset',
@@ -43,7 +54,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
       };
     }
 
-    if (width > 600) {
+    if (width > 750) {
       return {
         left: '8vw',
         bottom: 'unset',
@@ -73,15 +84,18 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   };
 
   const getAnimateVariant = (period: Periods) => {
-    if (!isCountry) {
+    if (isCountry) {
+      if (activePeriodName === period) {
+        return 'moveUpAnimate';
+      }
+      return 'moveSideAnimate';
+    }
+
+    if (prevPeriod) {
       return 'noCountryAnimate';
     }
 
-    if (activePeriodName === period) {
-      return 'moveUpAnimate';
-    }
-
-    return 'moveSideAnimate';
+    return undefined;
   };
 
   return (
@@ -98,7 +112,6 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
           className={clsx('period-switcher', {
             active: activePeriodName === period,
             right: period === Periods.Assimilation,
-            isCountry,
           })}
           onClick={() => handlePeriodChange(periodsData[period])}
         >
