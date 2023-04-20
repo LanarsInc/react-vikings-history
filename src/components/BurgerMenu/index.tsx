@@ -18,8 +18,15 @@ const BurgerMenu: FC<BurgerMenuProps> = ({
   handleMenuItemClick,
 }) => {
   const [isTransition, setIsTransition] = useState(isMenuOpen);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
+    setIsDisabled(true);
+
+    setTimeout(() => {
+      setIsDisabled(false);
+    }, MENU_TIMEOUT_DELAY);
+
     setTimeout(
       () => {
         setIsTransition(isMenuOpen);
@@ -45,7 +52,9 @@ const BurgerMenu: FC<BurgerMenuProps> = ({
   return (
     <div className="burger-menu">
       <div
-        className="burger-menu__button-wrapper"
+        className={clsx('burger-menu__button-wrapper', {
+          disabled: isDisabled,
+        })}
         onClick={() => setMenuIsOpen(!isMenuOpen)}
       >
         <div className="burger-menu__button">

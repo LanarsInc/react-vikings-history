@@ -16,6 +16,10 @@
     height: 18px;
     cursor: pointer;
     z-index: 12;
+
+    &.disabled {
+      pointer-events: none;
+    }
   }
 
   &__button {
