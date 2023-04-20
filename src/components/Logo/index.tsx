@@ -7,9 +7,10 @@ import './Logo.scss';
 
 interface LogoProps {
   isMenuOpen: boolean;
+  handleLogoClick: () => void;
 }
 
-const Logo: FC<LogoProps> = ({ isMenuOpen }) => {
+const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
   const [isTransition, setIsTransition] = useState(false);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const Logo: FC<LogoProps> = ({ isMenuOpen }) => {
       animate={{ color: isTransition ? '#040912' : '#ffff' }}
       transition={{ duration: 0.5 }}
       className="logo"
+      onClick={handleLogoClick}
     >
       {isTransition ? (
         <LogoBlackIcon className="logo__icon" />
