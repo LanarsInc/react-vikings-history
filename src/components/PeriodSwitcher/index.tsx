@@ -98,6 +98,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
           className={clsx('period-switcher', {
             active: activePeriodName === period,
             right: period === Periods.Assimilation,
+            isCountry,
           })}
           onClick={() => handlePeriodChange(periodsData[period])}
         >

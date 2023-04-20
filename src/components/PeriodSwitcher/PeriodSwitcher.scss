@@ -31,6 +31,10 @@
     color: $white;
   }
 
+  &.isCountry.active {
+    font-family: $font-title-bold;
+  }
+
   @include mq(small) {
     font-size: 100px;
     bottom: 12vh;
