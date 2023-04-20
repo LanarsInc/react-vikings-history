@@ -37,7 +37,8 @@ const PeriodItem: FC<PeriodItemProps> = ({
       x: 0,
       transition: {
         x: {
-          delay: TRANSITIONS.DELAY.slide,
+          ease: TRANSITIONS.EASE.slide,
+          delay: periodAnimateX === '-100%' ? 0 : TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
       },
@@ -47,7 +48,8 @@ const PeriodItem: FC<PeriodItemProps> = ({
       backgroundColor: nextColors.primaryColor,
       transition: {
         x: {
-          delay: TRANSITIONS.DELAY.slide + 0.02,
+          ease: TRANSITIONS.EASE.slide,
+          delay: isCountry ? 0.02 : TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
         backgroundColor: {
@@ -78,7 +80,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       clipPath: !isCountry ? 'inset(0 0 0 100%)' : undefined,
       backgroundColor: nextColors.secondaryColor,
       transition: {
-        clipPath: { duration: 1 },
+        clipPath: { duration: 2 },
         backgroundColor: {
           delay: TRANSITIONS.DELAY.backgroundColor,
           duration: TRANSITIONS.DURATION.backgroundColor,
@@ -94,7 +96,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay: 1,
+        delay: periodAnimateX === '-100%' ? 0.5 : 1,
         type: 'spring',
         stiffness: 100,
       },

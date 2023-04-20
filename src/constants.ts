@@ -26,4 +26,7 @@ export const TRANSITIONS = {
     slide: 0.5,
     backgroundColor: 0.5,
   },
+  EASE: {
+    slide: 'easeOut',
+  },
 };

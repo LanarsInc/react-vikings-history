@@ -2,9 +2,13 @@ import { Periods, TRANSITIONS } from '../constants';
 import { periodsData } from '../data';
 
 function useInfoAnimationVariables(activePeriodName: Periods) {
-  const getSlideTransition = (increaseDelay = 0) => {
+  const getSlideTransition = (
+    increaseDelay = 0,
+    delay = TRANSITIONS.DELAY.slide
+  ) => {
     return {
-      delay: TRANSITIONS.DELAY.slide + increaseDelay,
+      ease: TRANSITIONS.EASE.slide,
+      delay: delay + increaseDelay,
       duration: TRANSITIONS.DURATION.slide,
     };
   };
@@ -19,14 +23,14 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     mainAnimate: {
       x: 0,
       transition: {
-        x: getSlideTransition(),
+        x: getSlideTransition(0, 0),
       },
     },
     mainExit: {
       x: '100%',
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
-        x: getSlideTransition(0.02),
+        x: getSlideTransition(0.02, 0),
         backgroundColor: backgroundColorTransition,
       },
     },
@@ -45,7 +49,7 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay,
+        delay: delay - 0.4,
         type: 'spring',
         stiffness: 100,
       },
