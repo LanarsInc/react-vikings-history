@@ -26,7 +26,7 @@
   &__quotation {
     margin: 0;
     position: absolute;
-    left: 16px;
+    right: 16px;
     bottom: 18vh;
     width: 288px;
     display: grid;
@@ -40,12 +40,14 @@
       top: 18vh;
       bottom: unset;
       left: 18vw;
+      right: unset;
     }
 
     @include mq(medium) {
       top: 18vh;
       bottom: unset;
       left: 18vw;
+      right: unset;
       width: 326px;
     }
   }
