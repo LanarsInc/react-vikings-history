@@ -1,7 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import { motion as m } from 'framer-motion';
-import { ReactComponent as LogoWhiteIcon } from '../../assets/icons/Logo/logo-white.svg';
-import { ReactComponent as LogoBlackIcon } from '../../assets/icons/Logo/logo-black.svg';
 import { MENU_TIMEOUT_DELAY } from '../../constants';
 import './Logo.scss';
 
@@ -31,11 +29,7 @@ const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
       className="logo"
       onClick={handleLogoClick}
     >
-      {isTransition ? (
-        <LogoBlackIcon className="logo__icon" />
-      ) : (
-        <LogoWhiteIcon className="logo__icon" />
-      )}
+      <h1 className="logo__title">Vikings</h1>
       <p className="logo__subtitle">Historical overview</p>
     </m.div>
   );
