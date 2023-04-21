@@ -40,41 +40,49 @@ import AssimilationCultureDenmarkImageSmall from './Assimilation/Culture/small-d
 import AssimilationCultureNordenImage from './Assimilation/Culture/norden.webp';
 import AssimilationCultureNordenImageSmall from './Assimilation/Culture/small-norden.webp';
 
-export {
-  VikingAgeImage,
+export const SmallImageUrls = {
   VikingAgeImageSmall,
-  AssimilationImage,
   AssimilationImageSmall,
-  VikingAgeHistoryNorwayImage,
   VikingAgeHistoryNorwayImageSmall,
-  VikingAgeHistorySwedenImage,
   VikingAgeHistorySwedenImageSmall,
-  VikingAgeHistoryDenmarkImage,
   VikingAgeHistoryDenmarkImageSmall,
-  VikingAgeHistoryNordenImage,
   VikingAgeHistoryNordenImageSmall,
-  VikingAgeCultureNorwayImage,
   VikingAgeCultureNorwayImageSmall,
-  VikingAgeCultureSwedenImage,
   VikingAgeCultureSwedenImageSmall,
-  VikingAgeCultureDenmarkImage,
   VikingAgeCultureDenmarkImageSmall,
-  VikingAgeCultureNordenImage,
   VikingAgeCultureNordenImageSmall,
-  AssimilationHistoryNorwayImage,
   AssimilationHistoryNorwayImageSmall,
-  AssimilationHistorySwedenImage,
   AssimilationHistorySwedenImageSmall,
-  AssimilationHistoryDenmarkImage,
   AssimilationHistoryDenmarkImageSmall,
-  AssimilationHistoryNordenImage,
   AssimilationHistoryNordenImageSmall,
-  AssimilationCultureNorwayImage,
   AssimilationCultureNorwayImageSmall,
-  AssimilationCultureSwedenImage,
   AssimilationCultureSwedenImageSmall,
-  AssimilationCultureDenmarkImage,
   AssimilationCultureDenmarkImageSmall,
-  AssimilationCultureNordenImage,
   AssimilationCultureNordenImageSmall,
+};
+
+export const ImageUrls = {
+  VikingAgeImage,
+  AssimilationImage,
+  VikingAgeHistoryNorwayImage,
+  VikingAgeHistorySwedenImage,
+  VikingAgeHistoryDenmarkImage,
+  VikingAgeHistoryNordenImage,
+  VikingAgeCultureNorwayImage,
+  VikingAgeCultureSwedenImage,
+  VikingAgeCultureDenmarkImage,
+  VikingAgeCultureNordenImage,
+  AssimilationHistoryNorwayImage,
+  AssimilationHistorySwedenImage,
+  AssimilationHistoryDenmarkImage,
+  AssimilationHistoryNordenImage,
+  AssimilationCultureNorwayImage,
+  AssimilationCultureSwedenImage,
+  AssimilationCultureDenmarkImage,
+  AssimilationCultureNordenImage,
+};
+
+export const images = {
+  ...SmallImageUrls,
+  ...ImageUrls,
 };

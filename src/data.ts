@@ -1,6 +1,6 @@
 import { Countries, Periods, Subjects } from './constants';
 import { DataInterface, PeriodsDataInterface } from './types';
-import * as images from './assets/images/index';
+import { images } from './assets/images';
 
 export const periodsData: PeriodsDataInterface = {
   [Periods.Viking]: {
