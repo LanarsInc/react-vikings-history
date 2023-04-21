@@ -46,8 +46,14 @@
     grid-template-columns: 1fr;
     row-gap: 12px;
 
+    @include mq(extraSmall) {
+      max-height: unset;
+      overflow-x: unset;
+      overflow-y: unset;
+      padding-right: 0;
+    }
+
     @include mq(small) {
-      max-height: 500px;
       top: 23vh;
       left: 8vw;
       right: 8vw;
@@ -57,7 +63,6 @@
     }
 
     @include mq(medium) {
-      max-height: unset;
       top: 23vh;
       left: 14vw;
       width: 65vw;
