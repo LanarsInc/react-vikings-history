@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { motion as m, Variants } from 'framer-motion';
 import { InfoItemInterface } from '../../types';
 import './InfoItem.scss';
@@ -15,6 +15,12 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
   imagePathSmall,
   textBlocks,
 }) => {
+  const [isMediaLoaded, setIsMediaLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsMediaLoaded(false);
+  }, [imagePath]);
+
   return (
     <m.section
       variants={variants}
@@ -23,7 +29,7 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       exit="mainExit"
       className="info-item"
       style={{
-        backgroundColor: primaryColor,
+        backgroundColor: isMediaLoaded ? primaryColor : 'none',
         backgroundImage: `-webkit-image-set(
           url(${imagePathSmall}) 1x,
           url(${imagePath}) 2x)`,
@@ -32,6 +38,7 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       {/* For optimization purpose */}
       <img
         srcSet={`${imagePathSmall}, ${imagePath}`}
+        onLoad={() => setIsMediaLoaded(true)}
         style={{ display: 'none' }}
         alt="img"
       />
@@ -43,7 +50,7 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
           exit="contentBgExit"
           className="info-item__content-bg"
           style={{
-            backgroundColor: secondaryColor,
+            backgroundColor: isMediaLoaded ? secondaryColor : 'none',
             backgroundImage: `-webkit-image-set(
               url(${imagePathSmall}) 1x,
               url(${imagePath}) 2x)`,
