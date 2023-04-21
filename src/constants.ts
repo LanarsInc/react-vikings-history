@@ -16,6 +16,7 @@ export enum Subjects {
 }
 
 export const MENU_TIMEOUT_DELAY = 400;
+export const SHIFT_DELAY = 0.02;
 
 export const TRANSITIONS = {
   DURATION: {
@@ -30,3 +31,10 @@ export const TRANSITIONS = {
     slide: 'easeOut',
   },
 };
+
+export enum BreakPoints {
+  EXTRA_SMALL = 450,
+  SMALL = 750,
+  MEDIUM = 1050,
+  LARGE = 1350,
+}

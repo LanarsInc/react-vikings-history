@@ -50,9 +50,9 @@ const App: FC = () => {
     }
   }, [period.name, subject, country]);
 
-  const handleCountryChange = (selectedCountry: Countries | null) => {
-    if (country || !selectedCountry) {
-      if (country === selectedCountry || !selectedCountry) {
+  const handleCountryChange = (selectedCountry: Countries) => {
+    if (country) {
+      if (country === selectedCountry) {
         setInfoAnimationVariant(infoAnimationVariablesSlideFromRight);
         setCountry(null);
         setSubject(Subjects.History);
@@ -142,8 +142,7 @@ const App: FC = () => {
   };
 
   const handleLogoClick = () => {
-    handleCountryChange(country);
-    handlePeriodChange(periodsData[Periods.Viking]);
+    handlePeriodChange(periodsData[period.name]);
   };
 
   return (

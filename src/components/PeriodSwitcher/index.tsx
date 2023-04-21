@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
 import clsx from 'clsx';
-import { Periods, TRANSITIONS } from '../../constants';
+import { BreakPoints, Periods, TRANSITIONS } from '../../constants';
 import { periodsData } from '../../data';
 import { PeriodItemInterface } from '../../types';
 import useWindowSize from '../../hooks/useWindowSize';
@@ -15,21 +15,21 @@ interface PeriodSwitcherProps {
 }
 
 const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
-  activePeriodName,
   isCountry,
-  handlePeriodChange,
   prevPeriod,
+  activePeriodName,
+  handlePeriodChange,
 }) => {
   const { width } = useWindowSize();
 
   const getNoCountryLeftPositionAnimate = (period: Periods) => {
-    // TODO: find way to reuse scss variables for screen width
+    // TODO: find way to reuse scss variables for screen width (problem with Vite)
     if (activePeriodName === period) {
-      if (width > 600) {
+      if (width > BreakPoints.SMALL) {
         return '12vw';
       }
 
-      if (width > 450) {
+      if (width > BreakPoints.EXTRA_SMALL) {
         return '8vw';
       }
 
@@ -44,8 +44,8 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   };
 
   const getMoveUpAnimateVariant = () => {
-    // TODO: find way to reuse scss variables for screen width
-    if (width > 1050) {
+    // TODO: find way to reuse scss variables for screen width (problem with Vite)
+    if (width > BreakPoints.MEDIUM) {
       return {
         left: '14vw',
         bottom: 'unset',
@@ -54,7 +54,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
       };
     }
 
-    if (width > 750) {
+    if (width > BreakPoints.SMALL) {
       return {
         left: '8vw',
         bottom: 'unset',

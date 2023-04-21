@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
-import { TRANSITIONS } from '../../constants';
+import { SHIFT_DELAY, TRANSITIONS } from '../../constants';
 import './PeriodItem.scss';
 
 interface PeriodItemProps {
@@ -29,6 +29,8 @@ const PeriodItem: FC<PeriodItemProps> = ({
   quotationText,
   quotationAuthor,
 }) => {
+  const isSlideAfterCountry = periodAnimateX === '-100%';
+
   const variants = {
     mainInitial: {
       x: isLeftSection ? '-100%' : periodAnimateX,
@@ -38,7 +40,9 @@ const PeriodItem: FC<PeriodItemProps> = ({
       transition: {
         x: {
           ease: TRANSITIONS.EASE.slide,
-          delay: periodAnimateX === '-100%' ? 0 : TRANSITIONS.DELAY.slide,
+          delay: isSlideAfterCountry
+            ? 0
+            : TRANSITIONS.DELAY.slide - SHIFT_DELAY,
           duration: TRANSITIONS.DURATION.slide,
         },
       },
@@ -49,7 +53,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       transition: {
         x: {
           ease: TRANSITIONS.EASE.slide,
-          delay: isCountry ? 0.02 : TRANSITIONS.DELAY.slide,
+          delay: isCountry ? SHIFT_DELAY : TRANSITIONS.DELAY.slide,
           duration: TRANSITIONS.DURATION.slide,
         },
         backgroundColor: {
@@ -65,8 +69,8 @@ const PeriodItem: FC<PeriodItemProps> = ({
       left: 'unset',
       right: 0,
       transition: {
-        delay: 1,
-        duration: 0.5,
+        delay: isSlideAfterCountry ? 0 : 1,
+        duration: isSlideAfterCountry ? 0 : 0.5,
       },
     },
     contentBgInitial: {
@@ -74,15 +78,18 @@ const PeriodItem: FC<PeriodItemProps> = ({
     },
     contentBgAnimated: {
       backgroundPosition: '-15vw 0vw',
-      transition: { delay: 1, duration: 0.5 },
+      transition: {
+        delay: isSlideAfterCountry ? 0 : 1,
+        duration: isSlideAfterCountry ? 0 : 0.5,
+      },
     },
     contentBgExit: {
       clipPath: !isCountry ? 'inset(0 0 0 100%)' : undefined,
       backgroundColor: nextColors.secondaryColor,
       transition: {
-        clipPath: { duration: 2 },
+        clipPath: { duration: 1.5 },
         backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
+          delay: isCountry ? 0 : TRANSITIONS.DELAY.backgroundColor,
           duration: TRANSITIONS.DURATION.backgroundColor,
         },
       },
@@ -92,11 +99,11 @@ const PeriodItem: FC<PeriodItemProps> = ({
       opacity: 0,
     },
     quotationAnimated: {
-      x: '0',
+      x: 0,
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay: periodAnimateX === '-100%' ? 0.5 : 1,
+        delay: isSlideAfterCountry ? 0.5 : 1,
         type: 'spring',
         stiffness: 100,
       },
