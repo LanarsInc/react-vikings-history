@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 
 interface PeriodSwitcherProps {
   urls: string[];
@@ -6,34 +6,27 @@ interface PeriodSwitcherProps {
 }
 
 const ImagesLoader: FC<PeriodSwitcherProps> = ({ urls, setIsImagesLoaded }) => {
-  const [loadedImagesCounter, setLoadedImagesCounter] = useState(0);
+  const cacheImages = async (imagesSrs: string[]) => {
+    const promises = imagesSrs.map((src: string) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
 
-  useEffect(() => {
-    if (loadedImagesCounter >= urls.length) {
-      setTimeout(() => {
-        setIsImagesLoaded(true);
-      }, 500);
-    }
-  }, [urls.length, loadedImagesCounter, setIsImagesLoaded]);
+        img.src = src;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
 
-  const onComplete = () => {
-    setLoadedImagesCounter((prevState) => prevState + 1);
+    await Promise.all(promises);
+
+    setIsImagesLoaded(true);
   };
 
-  return (
-    <>
-      {urls.map((url: string) => (
-        <img
-          key={url}
-          src={url}
-          onLoad={onComplete}
-          onError={onComplete}
-          style={{ display: 'none' }}
-          alt="img"
-        />
-      ))}
-    </>
-  );
+  useEffect(() => {
+    cacheImages(urls);
+  }, []);
+
+  return null;
 };
 
 export default ImagesLoader;
