@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
 import { SHIFT_DELAY, TRANSITIONS } from '../../constants';
 import './PeriodItem.scss';
@@ -31,12 +31,6 @@ const PeriodItem: FC<PeriodItemProps> = ({
   quotationText,
   quotationAuthor,
 }) => {
-  const [isMediaLoaded, setIsMediaLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsMediaLoaded(false);
-  }, [imagePath]);
-
   const isSlideAfterCountry = periodAnimateX === '-100%';
 
   const variants = {
@@ -136,7 +130,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       exit="mainExit"
       className="period-item"
       style={{
-        backgroundColor: isMediaLoaded ? primaryColor : 'none',
+        backgroundColor: primaryColor,
         backgroundImage: `-webkit-image-set(
           url(${imagePathSmall}) 1x,
           url(${imagePath}) 2x)`,
@@ -145,7 +139,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       {/* For optimization purpose */}
       <img
         srcSet={`${imagePathSmall}, ${imagePath}`}
-        onLoad={() => setIsMediaLoaded(true)}
+        loading="lazy"
         style={{ display: 'none' }}
         alt="img"
       />
@@ -162,7 +156,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
           exit="contentBgExit"
           className="period-item__content-bg"
           style={{
-            backgroundColor: isMediaLoaded ? secondaryColor : 'none',
+            backgroundColor: secondaryColor,
             backgroundImage: `-webkit-image-set(
               url(${imagePathSmall}) 1x,
               url(${imagePath}) 2x)`,
