@@ -202,6 +202,7 @@ const App: FC = () => {
             primaryColor={period.primaryColor}
             secondaryColor={period.secondaryColor}
             imagePath={period.imagePath}
+            imagePathSmall={period.imagePathSmall}
             quotationText={period.quotationText}
             quotationAuthor={period.quotationAuthor}
           />
@@ -212,6 +213,7 @@ const App: FC = () => {
             primaryColor={currentInfo.primaryColor}
             secondaryColor={currentInfo.secondaryColor}
             imagePath={currentInfo.imagePath}
+            imagePathSmall={currentInfo.imagePathSmall}
             textBlocks={currentInfo.textBlocks}
           />
         )}

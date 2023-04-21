@@ -1,35 +1,14 @@
 import { Countries, Periods, Subjects } from './constants';
 import { DataInterface, PeriodsDataInterface } from './types';
-
-import VikingAgeImagePath from './assets/images/VikingAge/main.webp';
-import AssimilationImagePath from './assets/images/Assimilation/main.webp';
-
-import VikingAgeHistoryNorwayImage from './assets/images/VikingAge/History/norway.webp';
-import VikingAgeHistorySwedenImage from './assets/images/VikingAge/History/sweden.webp';
-import VikingAgeHistoryDenmarkImage from './assets/images/VikingAge/History/denmark.webp';
-import VikingAgeHistoryNordenImage from './assets/images/VikingAge/History/norden.webp';
-
-import VikingAgeCultureNorwayImage from './assets/images/VikingAge/Culture/norway.webp';
-import VikingAgeCultureSwedenImage from './assets/images/VikingAge/Culture/sweden.webp';
-import VikingAgeCultureDenmarkImage from './assets/images/VikingAge/Culture/denmark.webp';
-import VikingAgeCultureNordenImage from './assets/images/VikingAge/Culture/norden.webp';
-
-import AssimilationHistoryNorwayImage from './assets/images/Assimilation/History/norway.webp';
-import AssimilationHistorySwedenImage from './assets/images/Assimilation/History/sweden.webp';
-import AssimilationHistoryDenmarkImage from './assets/images/Assimilation/History/denmark.webp';
-import AssimilationHistoryNordenImage from './assets/images/Assimilation/History/norden.webp';
-
-import AssimilationCultureNorwayImage from './assets/images/Assimilation/Culture/norway.webp';
-import AssimilationCultureSwedenImage from './assets/images/Assimilation/Culture/sweden.webp';
-import AssimilationCultureDenmarkImage from './assets/images/Assimilation/Culture/denmark.webp';
-import AssimilationCultureNordenImage from './assets/images/Assimilation/Culture/norden.webp';
+import * as images from './assets/images/index';
 
 export const periodsData: PeriodsDataInterface = {
   [Periods.Viking]: {
     name: Periods.Viking,
     primaryColor: '#B898FB',
     secondaryColor: '#3D006C',
-    imagePath: VikingAgeImagePath,
+    imagePath: images.VikingAgeImage,
+    imagePathSmall: images.VikingAgeImageSmall,
     quotationText:
       'The Vikings were a fascinating people, whose legacy still echoes through history today',
     quotationAuthor: 'Judith Jesch',
@@ -38,7 +17,8 @@ export const periodsData: PeriodsDataInterface = {
     name: Periods.Assimilation,
     primaryColor: '#D6A953',
     secondaryColor: '#2A51B6',
-    imagePath: AssimilationImagePath,
+    imagePath: images.AssimilationImage,
+    imagePathSmall: images.AssimilationImageSmall,
     quotationText:
       'The Vikings were conquerors of the sea, the masters of the sword and builders of empires',
     quotationAuthor: 'Magnus Magnusson',
@@ -51,7 +31,8 @@ export const data: DataInterface = {
       [Countries.Norway]: {
         primaryColor: '#2B766C',
         secondaryColor: '#982020',
-        imagePath: VikingAgeHistoryNorwayImage,
+        imagePath: images.VikingAgeHistoryNorwayImage,
+        imagePathSmall: images.VikingAgeHistoryNorwayImageSmall,
         textBlocks: {
           left: [
             'The Viking Age is a period in European history that lasted from the late 8th century to the mid-11th century, with its origins in Scandinavia, including Norway. \n' +
@@ -67,7 +48,8 @@ export const data: DataInterface = {
       [Countries.Sweden]: {
         primaryColor: '#4FCB89',
         secondaryColor: '#514FCB',
-        imagePath: VikingAgeHistorySwedenImage,
+        imagePath: images.VikingAgeHistorySwedenImage,
+        imagePathSmall: images.VikingAgeHistorySwedenImageSmall,
         textBlocks: {
           left: [
             'The Viking Age, which lasted from 793 to 1066 AD, was a period of significant historical importance in Sweden. During this time, Swedish Vikings played a crucial role in shaping the history of Scandinavia, Europe, and even parts of the Middle East.',
@@ -83,7 +65,8 @@ export const data: DataInterface = {
       [Countries.Denmark]: {
         primaryColor: '#66A2FB',
         secondaryColor: '#E7A14E',
-        imagePath: VikingAgeHistoryDenmarkImage,
+        imagePath: images.VikingAgeHistoryDenmarkImage,
+        imagePathSmall: images.VikingAgeHistoryDenmarkImageSmall,
         textBlocks: {
           left: [
             "The Viking Age, which lasted from 793 to 1066 AD, was a period of great significance in Denmark's history. During this time, Danish Vikings established settlements and trading posts throughout Europe, Asia, North America, leaving a lasting impact on the world.",
@@ -97,7 +80,8 @@ export const data: DataInterface = {
       [Countries.Norden]: {
         primaryColor: '#FFAAA4',
         secondaryColor: '#FF8DED',
-        imagePath: VikingAgeHistoryNordenImage,
+        imagePath: images.VikingAgeHistoryNordenImage,
+        imagePathSmall: images.VikingAgeHistoryNordenImageSmall,
         textBlocks: {
           left: [
             'The Viking Age, which lasted from 793 to 1066 AD, was a time of significant historical importance in Norden. During this period, the Vikings from Norden were renowned for their seafaring skills, their raids and conquests.',
@@ -113,7 +97,8 @@ export const data: DataInterface = {
       [Countries.Norway]: {
         primaryColor: '#B9C0FF',
         secondaryColor: '#206698',
-        imagePath: VikingAgeCultureNorwayImage,
+        imagePath: images.VikingAgeCultureNorwayImage,
+        imagePathSmall: images.VikingAgeCultureNorwayImageSmall,
         textBlocks: {
           left: [
             'One of the defining features of Viking culture was their art. The Vikings were skilled metalworkers, and they used their expertise to create intricate pieces of jewelry, weapons, and household items. They also carved intricate designs into wood and stone, creating some of the most impressive artwork of the time.',
@@ -127,7 +112,8 @@ export const data: DataInterface = {
       [Countries.Sweden]: {
         primaryColor: '#82B770',
         secondaryColor: '#714481',
-        imagePath: VikingAgeCultureSwedenImage,
+        imagePath: images.VikingAgeCultureSwedenImage,
+        imagePathSmall: images.VikingAgeCultureSwedenImageSmall,
         textBlocks: {
           left: [
             'One of the defining features of Viking culture in Sweden was their art. The Vikings were skilled metalworkers, and they used their expertise to create intricate pieces of jewelry, weapons, household items. They also carved intricate designs into wood and stone, creating some of the most impressive artwork of the time.',
@@ -142,7 +128,8 @@ export const data: DataInterface = {
       [Countries.Denmark]: {
         primaryColor: '#4542D4',
         secondaryColor: '#AD9E4E',
-        imagePath: VikingAgeCultureDenmarkImage,
+        imagePath: images.VikingAgeCultureDenmarkImage,
+        imagePathSmall: images.VikingAgeCultureDenmarkImageSmall,
         textBlocks: {
           left: [
             'The Viking Age in Denmark lasted from 793 to 1066 and was a time of significant cultural, social, and economic change. During this period, Danish Vikings, also known as Norsemen, traveled widely, engaging in trade and raiding across Europe and beyond.',
@@ -157,7 +144,8 @@ export const data: DataInterface = {
       [Countries.Norden]: {
         primaryColor: '#724708',
         secondaryColor: '#7CA1FF',
-        imagePath: VikingAgeCultureNordenImage,
+        imagePath: images.VikingAgeCultureNordenImage,
+        imagePathSmall: images.VikingAgeCultureNordenImageSmall,
         textBlocks: {
           left: [
             'The Viking Age also saw the emergence of a rich literary tradition in Norden, with the composition of sagas, poems, and stories that have become an essential part of the region\'s cultural identity. These tales include the story of Beowulf, a legendary hero who battles a monstrous creature, and the epic poem "The Tale of Ragnar\'s Sons," which recounts the adventures of a group of Viking warriors.',
@@ -176,7 +164,8 @@ export const data: DataInterface = {
       [Countries.Norway]: {
         primaryColor: '#852626',
         secondaryColor: '#2B766C',
-        imagePath: AssimilationHistoryNorwayImage,
+        imagePath: images.AssimilationHistoryNorwayImage,
+        imagePathSmall: images.AssimilationHistoryNorwayImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period, also known as the Christianization of Norway, began in the late 10th century and lasted until the mid-11th century. During this period, Norway underwent significant changes in its political, social, and religious structures.',
@@ -191,7 +180,8 @@ export const data: DataInterface = {
       [Countries.Sweden]: {
         primaryColor: '#134765',
         secondaryColor: '#9D3721',
-        imagePath: AssimilationHistorySwedenImage,
+        imagePath: images.AssimilationHistorySwedenImage,
+        imagePathSmall: images.AssimilationHistorySwedenImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period in Sweden began in the late 1000s, and it was a time of significant cultural change. During this period, the old pagan religion was gradually replaced by Christianity, and Swedish society became more settled and less focused on raiding and pillaging.',
@@ -206,7 +196,8 @@ export const data: DataInterface = {
       [Countries.Denmark]: {
         primaryColor: '#1B70BF',
         secondaryColor: '#9F622A',
-        imagePath: AssimilationHistoryDenmarkImage,
+        imagePath: images.AssimilationHistoryDenmarkImage,
+        imagePathSmall: images.AssimilationHistoryDenmarkImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period in Denmark, which began in the late 10th century and continued until the early 12th century, was marked by significant political and cultural changes.',
@@ -221,7 +212,8 @@ export const data: DataInterface = {
       [Countries.Norden]: {
         primaryColor: '#D7D145',
         secondaryColor: '#633CB6',
-        imagePath: AssimilationHistoryNordenImage,
+        imagePath: images.AssimilationHistoryNordenImage,
+        imagePathSmall: images.AssimilationHistoryNordenImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period, which began in the late 10th century, was a time of significant cultural change throughout the Nordic region, including Denmark. One of the most significant changes during this period was the gradual conversion of the Nordic peoples from their traditional pagan beliefs to Christianity.',
@@ -238,7 +230,8 @@ export const data: DataInterface = {
       [Countries.Norway]: {
         primaryColor: '#FDE17F',
         secondaryColor: '#7C488E',
-        imagePath: AssimilationCultureNorwayImage,
+        imagePath: images.AssimilationCultureNorwayImage,
+        imagePathSmall: images.AssimilationCultureNorwayImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period in Norway was characterized by a blending of traditional Norse culture and newly introduced Christian customs. This period marked a significant transition in Norwegian history, as the country was in the process of converting from the traditional pagan religion to Christianity.',
@@ -253,7 +246,8 @@ export const data: DataInterface = {
       [Countries.Sweden]: {
         primaryColor: '#42742A',
         secondaryColor: '#6F4B9E',
-        imagePath: AssimilationCultureSwedenImage,
+        imagePath: images.AssimilationCultureSwedenImage,
+        imagePathSmall: images.AssimilationCultureSwedenImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period in Sweden, also known as the Christianization of Sweden, began in the late 1000s and lasted until the 12th century. During this period, Sweden underwent significant changes in culture, religion, and social organization as it transitioned from pagan beliefs to Christianity.',
@@ -268,7 +262,8 @@ export const data: DataInterface = {
       [Countries.Denmark]: {
         primaryColor: '#6D6F0B',
         secondaryColor: '#3F549E',
-        imagePath: AssimilationCultureDenmarkImage,
+        imagePath: images.AssimilationCultureDenmarkImage,
+        imagePathSmall: images.AssimilationCultureDenmarkImageSmall,
         textBlocks: {
           left: [
             'The Viking assimilation period in Denmark began in the late 10th century, after the end of the Viking Age. During this time, Denmark was in the process of transitioning from a primarily pagan society to a Christian one, which led to significant changes in its culture and way of life.',
@@ -282,7 +277,8 @@ export const data: DataInterface = {
       [Countries.Norden]: {
         primaryColor: '#789AF2',
         secondaryColor: '#8F662A',
-        imagePath: AssimilationCultureNordenImage,
+        imagePath: images.AssimilationCultureNordenImage,
+        imagePathSmall: images.AssimilationCultureNordenImageSmall,
         textBlocks: {
           left: [
             'During the late 1000s, the culture in Norden was undergoing significant changes as the Viking Age was drawing to a close. The process of assimilation of the Vikings into the broader European culture was already underway, and the influence of Christianity was spreading throughout the region.',

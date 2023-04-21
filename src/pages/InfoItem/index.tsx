@@ -12,6 +12,7 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
   primaryColor,
   secondaryColor,
   imagePath,
+  imagePathSmall,
   textBlocks,
 }) => {
   return (
@@ -23,9 +24,17 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       className="info-item"
       style={{
         backgroundColor: primaryColor,
-        backgroundImage: `url(${imagePath})`,
+        backgroundImage: `-webkit-image-set(
+          url(${imagePathSmall}) 1x,
+          url(${imagePath}) 2x)`,
       }}
     >
+      {/* For optimization purpose */}
+      <img
+        srcSet={`${imagePathSmall}, ${imagePath}`}
+        style={{ display: 'none' }}
+        alt="img"
+      />
       <div className="info-item__content">
         <m.div
           variants={variants}
@@ -35,11 +44,12 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
           className="info-item__content-bg"
           style={{
             backgroundColor: secondaryColor,
-            backgroundImage: `url(${imagePath})`,
+            backgroundImage: `-webkit-image-set(
+              url(${imagePathSmall}) 1x,
+              url(${imagePath}) 2x)`,
           }}
         />
       </div>
-
       <article className="info-item__article">
         {Object.keys(textBlocks).map((position) => (
           <m.div

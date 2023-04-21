@@ -14,6 +14,7 @@ interface PeriodItemProps {
   primaryColor: string;
   secondaryColor: string;
   imagePath: string;
+  imagePathSmall: string;
   quotationText: string;
   quotationAuthor: string;
 }
@@ -26,6 +27,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
   primaryColor,
   secondaryColor,
   imagePath,
+  imagePathSmall,
   quotationText,
   quotationAuthor,
 }) => {
@@ -131,9 +133,17 @@ const PeriodItem: FC<PeriodItemProps> = ({
       className="period-item"
       style={{
         backgroundColor: primaryColor,
-        backgroundImage: `url(${imagePath})`,
+        backgroundImage: `-webkit-image-set(
+          url(${imagePathSmall}) 1x,
+          url(${imagePath}) 2x)`,
       }}
     >
+      {/* For optimization purpose */}
+      <img
+        srcSet={`${imagePathSmall}, ${imagePath}`}
+        style={{ display: 'none' }}
+        alt="img"
+      />
       <m.div
         variants={variants}
         initial="contentInitial"
@@ -148,7 +158,9 @@ const PeriodItem: FC<PeriodItemProps> = ({
           className="period-item__content-bg"
           style={{
             backgroundColor: secondaryColor,
-            backgroundImage: `url(${imagePath})`,
+            backgroundImage: `-webkit-image-set(
+              url(${imagePathSmall}) 1x,
+              url(${imagePath}) 2x)`,
           }}
         />
       </m.div>

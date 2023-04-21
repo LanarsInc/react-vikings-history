@@ -5,6 +5,7 @@ export interface PeriodItemInterface {
   primaryColor: string;
   secondaryColor: string;
   imagePath: string;
+  imagePathSmall: string;
   quotationText: string;
   quotationAuthor: string;
 }
@@ -17,6 +18,7 @@ export interface InfoItemInterface {
   primaryColor: string;
   secondaryColor: string;
   imagePath: string;
+  imagePathSmall: string;
   textBlocks: {
     left: string[];
     right: string[];
