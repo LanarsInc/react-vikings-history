@@ -33,6 +33,11 @@
   }
 
   &__article {
+    @include scroll-style();
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 400px;
+    padding-right: 10px;
     position: absolute;
     top: 30vh;
     left: 16px;
@@ -42,6 +47,7 @@
     row-gap: 12px;
 
     @include mq(small) {
+      max-height: 500px;
       top: 23vh;
       left: 8vw;
       right: 8vw;
@@ -51,6 +57,7 @@
     }
 
     @include mq(medium) {
+      max-height: unset;
       top: 23vh;
       left: 14vw;
       width: 65vw;
