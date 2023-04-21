@@ -29,6 +29,8 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       <div className="info-item__content">
         <m.div
           variants={variants}
+          initial="contentBgInitial"
+          animate="contentBgAnimate"
           exit="contentBgExit"
           className="info-item__content-bg"
           style={{

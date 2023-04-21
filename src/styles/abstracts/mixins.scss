@@ -34,7 +34,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: $light-grey;
-    border-radius: $width / 2;
+    border-radius: calc($width / 2);
   }
 
   &::-webkit-resizer {

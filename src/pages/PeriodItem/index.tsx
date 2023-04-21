@@ -41,7 +41,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
         x: {
           ease: TRANSITIONS.EASE.slide,
           delay: isSlideAfterCountry
-            ? 0
+            ? 0.2
             : TRANSITIONS.DELAY.slide - SHIFT_DELAY,
           duration: TRANSITIONS.DURATION.slide,
         },
@@ -63,31 +63,38 @@ const PeriodItem: FC<PeriodItemProps> = ({
       },
     },
     contentInitial: {
-      left: 0,
+      width: isLeftSection ? '85vw' : '100vw',
     },
     contentAnimated: {
-      left: 'unset',
-      right: 0,
+      clipPath: isLeftSection ? 'inset(0 0 0 0)' : 'inset(0 0 0 15%)',
       transition: {
         delay: isSlideAfterCountry ? 0 : 1,
         duration: isSlideAfterCountry ? 0 : 0.5,
       },
     },
     contentBgInitial: {
-      backgroundPosition: 0,
+      clipPath: isLeftSection ? 'inset(0 0 0 100%)' : 'inset(0 0 0 0)',
     },
     contentBgAnimated: {
-      backgroundPosition: '-15vw 0vw',
+      backgroundPosition: !isLeftSection ? '0 0' : '-15vw 0vw',
+      clipPath: 'inset(0 0 0 0)',
       transition: {
-        delay: isSlideAfterCountry ? 0 : 1,
-        duration: isSlideAfterCountry ? 0 : 0.5,
+        clipPath: {
+          delay: isSlideAfterCountry ? 0.2 : 0.5,
+          duration: 1,
+        },
       },
     },
     contentBgExit: {
-      clipPath: !isCountry ? 'inset(0 0 0 100%)' : undefined,
+      clipPath:
+        !isCountry && !isLeftSection
+          ? 'inset(0 100% 0 0)'
+          : 'inset(0 0 0 100%)',
       backgroundColor: nextColors.secondaryColor,
       transition: {
-        clipPath: { duration: 1.5 },
+        clipPath: {
+          duration: isSlideAfterCountry ? 1 : 1.5,
+        },
         backgroundColor: {
           delay: isCountry ? 0 : TRANSITIONS.DELAY.backgroundColor,
           duration: TRANSITIONS.DURATION.backgroundColor,

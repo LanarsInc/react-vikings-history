@@ -34,14 +34,26 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       x: '100%',
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
-        x: getSlideTransition(SHIFT_DELAY, 0),
+        x: getSlideTransition(SHIFT_DELAY, 0.2),
         backgroundColor: getBackgroundColorTransition(),
       },
     },
+    contentBgInitial: {
+      clipPath: 'inset(0 100% 0 0)',
+    },
+    contentBgAnimate: {
+      clipPath: 'inset(0 0 0 0)',
+      transition: {
+        delay: 0.2,
+        duration: 1,
+      },
+    },
     contentBgExit: {
+      clipPath: 'inset(0 100% 0 0)',
       backgroundColor: periodsData[activePeriodName].secondaryColor,
       transition: {
-        backgroundColor: getBackgroundColorTransition(0),
+        clipPath: { delay: 0, duration: 1 },
+        backgroundColor: getBackgroundColorTransition(0.2),
       },
     },
     textInitial: {
@@ -83,13 +95,21 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
         backgroundColor: getBackgroundColorTransition(),
       },
     },
+    contentBgInitial: {
+      clipPath: 'inset(0 100% 0 0)',
+    },
+    contentBgAnimate: {
+      clipPath: 'inset(0 0 0 0)',
+      transition: {
+        delay: 0.5,
+        duration: TRANSITIONS.DURATION.slide,
+      },
+    },
     contentBgExit: {
       clipPath: 'inset(0 100% 0 0)',
       transition: {
         backgroundColor: getBackgroundColorTransition(),
-        clipPath: {
-          duration: 0.5,
-        },
+        clipPath: { duration: 0.5 },
       },
     },
     textInitial: {
@@ -129,6 +149,16 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       transition: {
         y: getSlideTransition(SHIFT_DELAY),
         backgroundColor: getBackgroundColorTransition(),
+      },
+    },
+    contentBgInitial: {
+      clipPath: 'inset(0 0 100% 0)',
+    },
+    contentBgAnimate: {
+      clipPath: 'inset(0 0 0 0)',
+      transition: {
+        delay: 0.5,
+        duration: TRANSITIONS.DURATION.slide,
       },
     },
     contentBgExit: {
