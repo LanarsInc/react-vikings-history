@@ -12,6 +12,7 @@
   white-space: nowrap;
   word-break: keep-all;
   cursor: pointer;
+  user-select: none;
   z-index: 3;
   transition: color 500ms linear;
 
