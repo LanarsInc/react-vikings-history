@@ -21,9 +21,7 @@ const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
   }, [isMenuOpen]);
 
   return (
-    <m.div
-      className="logo"
-    >
+    <m.div className="logo">
       <m.div
         // TODO: find way to reuse scss color variables
         initial={{ color: '#ffff' }}

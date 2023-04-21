@@ -66,8 +66,6 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       transition: {
         duration: 0.5,
         delay: delay - 0.4,
-        type: 'spring',
-        stiffness: 100,
       },
     }),
     textExit: (delay: number) => ({
@@ -122,8 +120,6 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       transition: {
         duration: 0.5,
         delay,
-        type: 'spring',
-        stiffness: 100,
       },
     }),
     textExit: (delay: number) => ({
@@ -180,8 +176,6 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       transition: {
         duration: 0.5,
         delay: 1,
-        type: 'spring',
-        stiffness: 100,
       },
     },
     textExit: {

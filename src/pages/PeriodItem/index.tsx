@@ -113,8 +113,6 @@ const PeriodItem: FC<PeriodItemProps> = ({
       transition: {
         duration: 0.5,
         delay: isSlideAfterCountry ? 0.5 : 1,
-        type: 'spring',
-        stiffness: 100,
       },
     },
     quotationExit: {
