@@ -22,15 +22,19 @@ const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
 
   return (
     <m.div
-      initial={{ color: 'white' }}
-      // TODO: find way to reuse scss color variables
-      animate={{ color: isTransition ? '#040912' : '#ffff' }}
-      transition={{ duration: 0.5 }}
       className="logo"
-      onClick={handleLogoClick}
     >
-      <h1 className="logo__title">Vikings</h1>
-      <p className="logo__subtitle">Historical overview</p>
+      <m.div
+        // TODO: find way to reuse scss color variables
+        initial={{ color: '#ffff' }}
+        animate={{ color: isTransition ? '#040912' : '#ffff' }}
+        transition={{ duration: 0.5 }}
+        className="logo__inner"
+        onClick={handleLogoClick}
+      >
+        <h1 className="logo__title">Vikings</h1>
+        <p className="logo__subtitle">Historical overview</p>
+      </m.div>
     </m.div>
   );
 };

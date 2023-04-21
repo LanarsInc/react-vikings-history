@@ -4,34 +4,48 @@
   position: fixed;
   top: 16px;
   left: 50%;
-  display: grid;
-  grid-template-rows: auto auto;
-  justify-items: center;
-  grid-row-gap: 6px;
-  color: $white;
   translate: -50%;
-  scale: 0.8;
-  cursor: pointer;
-  user-select: none;
   z-index: 13;
 
   @include mq(medium) {
-    top: 5vh;
-    left: 3.5vw;
+    top: 0;
+    left: 0;
+    width: 15vw;
+    padding-top: 5vh;
     translate: 0;
+  }
+
+  &__inner {
+    width: max-content;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    grid-row-gap: 6px;
+    color: $white;
+    cursor: pointer;
+    user-select: none;
   }
 
   &__title {
     text-align: center;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 20px;
     font-family: $font-logo;
+
+    @include mq(medium) {
+      font-size: 24px;
+    }
   }
 
   &__subtitle {
     text-align: center;
-    font-size: 11px;
+    font-size: 8px;
     font-family: $font-main-regular;
-    opacity: 0.5;
+    opacity: 0.7;
+
+    @include mq(medium) {
+      font-size: 11px;
+    }
   }
 }
