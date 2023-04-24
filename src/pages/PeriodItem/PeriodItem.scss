@@ -67,7 +67,7 @@
   &__quotation-text {
     margin: 0;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     font-family: $font-italic-regular;
     line-height: 24px;
 
@@ -79,7 +79,7 @@
   &__quotation-author {
     margin: 0;
     text-align: right;
-    font-size: 12px;
+    font-size: 13px;
     font-family: $font-title-semi-bold;
 
     @include mq(medium) {

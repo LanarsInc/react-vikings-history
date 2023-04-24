@@ -2,13 +2,10 @@ import React, { FC, useState } from 'react';
 import { AnimatePresence, motion as m } from 'framer-motion';
 import Home from './pages/Home';
 import ImagesLoader from './components/ImagesLoader';
-import useWindowSize from './hooks/useWindowSize';
-import { BreakPoints } from './constants';
-import { ImageUrls, SmallImageUrls } from './assets/images';
+import { images} from './assets/images';
 import Loader from './components/UI/Loader';
 
 const App: FC = () => {
-  const { width } = useWindowSize();
   const [isImagesLoaded, setIsImagesLoaded] = useState(false);
 
   return (
@@ -30,11 +27,7 @@ const App: FC = () => {
 
       <ImagesLoader
         setIsImagesLoaded={setIsImagesLoaded}
-        urls={
-          width < BreakPoints.SMALL
-            ? Object.values(SmallImageUrls)
-            : Object.values(ImageUrls)
-        }
+        urls={Object.values(images)}
       />
     </>
   );

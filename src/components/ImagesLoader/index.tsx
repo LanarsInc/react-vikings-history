@@ -1,4 +1,4 @@
-import { FC, useEffect, useCallback } from 'react';
+import { FC, useEffect } from 'react';
 
 interface PeriodSwitcherProps {
   urls: string[];
@@ -6,30 +6,27 @@ interface PeriodSwitcherProps {
 }
 
 const ImagesLoader: FC<PeriodSwitcherProps> = ({ urls, setIsImagesLoaded }) => {
-  const cacheImages = useCallback(
-    async (imagesSrs: string[]) => {
-      const promises = imagesSrs.map((src: string) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
+  const cacheImages = async (imagesSrs: string[]) => {
+    const promises = imagesSrs.map((src: string) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
 
-          img.src = src;
-          // @ts-ignore
-          img.onload = resolve();
-          // @ts-ignore
-          img.onerror = reject();
-        });
+        img.src = src;
+        // @ts-ignore
+        img.onload = resolve();
+        // @ts-ignore
+        img.onerror = reject();
       });
+    });
 
-      await Promise.all(promises);
+    await Promise.all(promises);
 
-      setIsImagesLoaded(true);
-    },
-    [setIsImagesLoaded]
-  );
+    setIsImagesLoaded(true);
+  };
 
   useEffect(() => {
     cacheImages(urls);
-  }, [cacheImages]);
+  }, []);
 
   return null;
 };
