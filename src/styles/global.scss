@@ -9,6 +9,7 @@ html, body {
   margin: 0;
   background: $background;
   font-family: $font-main-regular;
+  overscroll-behavior: none;
 }
 
 h1, h2, h3, h4, p {
