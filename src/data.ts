@@ -10,7 +10,7 @@ export const periodsData: PeriodsDataInterface = {
     imagePath: images.VikingAgeImage,
     imagePathSmall: images.VikingAgeImageSmall,
     quotationText:
-      'The Vikings were a fascinating people, whose legacy still echoes through history today',
+      '“ The Vikings were a fascinating people, whose legacy still echoes through history today ”',
     quotationAuthor: 'Judith Jesch',
   },
   [Periods.Assimilation]: {
@@ -20,7 +20,7 @@ export const periodsData: PeriodsDataInterface = {
     imagePath: images.AssimilationImage,
     imagePathSmall: images.AssimilationImageSmall,
     quotationText:
-      'The Vikings were conquerors of the sea, the masters of the sword and builders of empires',
+      '“ The Vikings were conquerors of the sea, the masters of the sword and builders of empires ”',
     quotationAuthor: 'Magnus Magnusson',
   },
 };

@@ -22,12 +22,3 @@ h1, h2, h3, h4, p {
   min-height: 100vh;
   overflow: hidden;
 }
-
-.loader-wrapper {
-  @include flex-center;
-  position: fixed;
-  background-color: $purple;
-  width: 100vw;
-  min-height: 100vh;
-  z-index: 222;
-}

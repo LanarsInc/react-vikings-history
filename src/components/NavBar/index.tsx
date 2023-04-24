@@ -20,22 +20,14 @@ const NavBar: FC<NavBarProps> = ({ activeCountry, handleCountryChange }) => {
     }, (TRANSITIONS.DURATION.slide + TRANSITIONS.DELAY.slide) * 1000);
   };
 
-  const variants = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        delay: 0.8,
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <m.nav
-      variants={variants}
-      initial="initial"
-      animate="animate"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        delay: 0.8,
+        duration: 0.5,
+      }}
       className="nav-bar"
     >
       <ul className="nav-bar__list">

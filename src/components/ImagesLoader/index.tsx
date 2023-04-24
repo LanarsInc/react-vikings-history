@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 
 interface PeriodSwitcherProps {
-  urls: string[];
+  urls: string[] | null;
   setIsImagesLoaded: (state: boolean) => void;
 }
 
@@ -12,10 +12,12 @@ const ImagesLoader: FC<PeriodSwitcherProps> = ({ urls, setIsImagesLoaded }) => {
         const img = new Image();
 
         img.src = src;
-        // @ts-ignore
-        img.onload = resolve();
-        // @ts-ignore
-        img.onerror = reject();
+        img.onload = () => {
+          resolve(img);
+        };
+        img.onerror = (e) => {
+          reject(e);
+        };
       });
     });
 
@@ -25,8 +27,10 @@ const ImagesLoader: FC<PeriodSwitcherProps> = ({ urls, setIsImagesLoaded }) => {
   };
 
   useEffect(() => {
-    cacheImages(urls);
-  }, []);
+    if (urls) {
+      cacheImages(urls);
+    }
+  }, [urls]);
 
   return null;
 };

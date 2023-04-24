@@ -1,34 +1,35 @@
-import React, { FC, useState } from 'react';
-import { AnimatePresence, motion as m } from 'framer-motion';
+import React, { FC, useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Home from './pages/Home';
 import ImagesLoader from './components/ImagesLoader';
-import { images} from './assets/images';
-import Loader from './components/UI/Loader';
+import { ImageUrls, SmallImageUrls } from './assets/images';
+import useWindowSize from './hooks/useWindowSize';
+import { BreakPoints } from './constants';
+import FullScreenLoader from './components/UI/FullScreenLoader';
 
 const App: FC = () => {
+  const { width } = useWindowSize();
   const [isImagesLoaded, setIsImagesLoaded] = useState(false);
+
+  const [urls, setUrls] = useState<string[] | null>(null);
+
+  useEffect(() => {
+    if (width) {
+      setUrls(
+        width > BreakPoints.EXTRA_SMALL
+          ? Object.values(ImageUrls)
+          : Object.values(SmallImageUrls)
+      );
+    }
+  }, [width]);
 
   return (
     <>
       <AnimatePresence>
-        {!isImagesLoaded ? (
-          <m.div
-            key="loader-wrapper"
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="loader-wrapper"
-          >
-            <Loader />
-          </m.div>
-        ) : (
-          <Home key="home" />
-        )}
+        {!isImagesLoaded ? <FullScreenLoader /> : <Home key="home" />}
       </AnimatePresence>
 
-      <ImagesLoader
-        setIsImagesLoaded={setIsImagesLoaded}
-        urls={Object.values(images)}
-      />
+      <ImagesLoader setIsImagesLoaded={setIsImagesLoaded} urls={urls} />
     </>
   );
 };

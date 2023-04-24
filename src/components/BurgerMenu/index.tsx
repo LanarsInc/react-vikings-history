@@ -38,11 +38,13 @@ const BurgerMenu: FC<BurgerMenuProps> = ({
   const buttonLineVariants = {
     // TODO: find way to reuse scss color variables
     topAnimate: {
+      opacity: 1,
       rotate: isTransition ? '45deg' : 0,
       translate: isTransition ? '2px -6px' : 0,
       backgroundColor: isTransition ? '#040912' : '#ffff',
     },
     bottomAnimate: {
+      opacity: 1,
       rotate: isTransition ? '-45deg' : 0,
       translate: isTransition ? '2px 4px' : 0,
       backgroundColor: isTransition ? '#040912' : '#ffff',
@@ -62,8 +64,12 @@ const BurgerMenu: FC<BurgerMenuProps> = ({
             <m.div
               key={number}
               variants={buttonLineVariants}
+              initial={{ opacity: 0 }}
               animate={number === 0 ? 'topAnimate' : 'bottomAnimate'}
-              transition={{ duration: 0.3 }}
+              transition={{
+                duration: 0.3,
+                opacity: { duration: 0.5, delay: 0.5 },
+              }}
               className="burger-menu__button-line"
             />
           ))}

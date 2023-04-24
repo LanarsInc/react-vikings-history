@@ -174,7 +174,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
         className="period-item__quotation"
       >
         <p className="period-item__quotation-text">
-          &quot; {quotationText} &quot;
+          {quotationText}
         </p>
         <h4 className="period-item__quotation-author">{quotationAuthor}</h4>
       </m.blockquote>

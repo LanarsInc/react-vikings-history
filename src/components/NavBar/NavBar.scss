@@ -1,10 +1,11 @@
 @use './../../styles/abstracts' as *;
 
 .nav-bar {
+  width: 15vw;
   display: none;
   position: absolute;
-  top: 20vh;
-  right: 4vw;
+  top: 15vh;
+  right: 0;
   z-index: 5;
 
   @include mq(medium) {

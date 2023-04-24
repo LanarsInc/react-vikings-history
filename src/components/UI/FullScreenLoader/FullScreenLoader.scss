@@ -1,0 +1,23 @@
+@use './../../../styles/abstracts' as *;
+
+.full-screen-loader {
+  @include flex-center;
+  position: fixed;
+  background-color: $purple;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 25;
+
+  &__image-wrapper {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 5px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
