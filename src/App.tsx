@@ -18,7 +18,7 @@ const App: FC = () => {
           <m.div
             key="loader-wrapper"
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="loader-wrapper"
           >
             <Loader />
@@ -31,9 +31,9 @@ const App: FC = () => {
       <ImagesLoader
         setIsImagesLoaded={setIsImagesLoaded}
         urls={
-          width > BreakPoints.SMALL
-            ? Object.values(ImageUrls)
-            : Object.values(SmallImageUrls)
+          width < BreakPoints.SMALL
+            ? Object.values(SmallImageUrls)
+            : Object.values(ImageUrls)
         }
       />
     </>

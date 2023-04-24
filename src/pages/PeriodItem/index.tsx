@@ -4,6 +4,7 @@ import { SHIFT_DELAY, TRANSITIONS } from '../../constants';
 import './PeriodItem.scss';
 
 interface PeriodItemProps {
+  isFirstAppear: boolean;
   isLeftSection: boolean;
   isCountry: boolean;
   periodAnimateX: string;
@@ -20,6 +21,7 @@ interface PeriodItemProps {
 }
 
 const PeriodItem: FC<PeriodItemProps> = ({
+  isFirstAppear,
   isLeftSection,
   periodAnimateX,
   nextColors,
@@ -82,7 +84,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       clipPath: 'inset(0 0 0 0)',
       transition: {
         clipPath: {
-          delay: isSlideAfterCountry ? 0.2 : 0.5,
+          delay: isSlideAfterCountry || isFirstAppear ? 0.2 : 0.5,
           duration: 1,
         },
       },
@@ -112,7 +114,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay: isSlideAfterCountry ? 0.5 : 1,
+        delay: isSlideAfterCountry || isFirstAppear ? 0.5 : 1,
       },
     },
     quotationExit: {
@@ -125,7 +127,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
   return (
     <m.section
       variants={variants}
-      initial="mainInitial"
+      initial={isFirstAppear ? undefined : 'mainInitial'}
       animate="mainAnimated"
       exit="mainExit"
       className="period-item"
@@ -164,6 +166,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
         />
       </m.div>
       <m.blockquote
+        key={quotationText}
         variants={variants}
         initial="quotationInitial"
         animate="quotationAnimated"

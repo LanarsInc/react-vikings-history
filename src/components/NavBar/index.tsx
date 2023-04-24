@@ -1,4 +1,5 @@
 import React, { FC, useState } from 'react';
+import { motion as m } from 'framer-motion';
 import clsx from 'clsx';
 import { Countries, TRANSITIONS } from '../../constants';
 import './NavBar.scss';
@@ -19,8 +20,24 @@ const NavBar: FC<NavBarProps> = ({ activeCountry, handleCountryChange }) => {
     }, (TRANSITIONS.DURATION.slide + TRANSITIONS.DELAY.slide) * 1000);
   };
 
+  const variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 0.8,
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <nav className="nav-bar">
+    <m.nav
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      className="nav-bar"
+    >
       <ul className="nav-bar__list">
         {Object.values(Countries).map((country) => (
           <li
@@ -35,7 +52,7 @@ const NavBar: FC<NavBarProps> = ({ activeCountry, handleCountryChange }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </m.nav>
   );
 };
 

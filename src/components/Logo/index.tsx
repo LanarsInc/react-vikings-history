@@ -20,8 +20,24 @@ const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
     );
   }, [isMenuOpen]);
 
+  const variants = {
+    initial: { opacity: 0 },
+    animate: {
+      opacity: 1,
+      transition: {
+        delay: 0.8,
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
-    <m.div className="logo">
+    <m.div
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      className="logo"
+    >
       <m.div
         // TODO: find way to reuse scss color variables
         initial={{ color: '#ffff' }}

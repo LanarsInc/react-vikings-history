@@ -14,6 +14,7 @@ import { InfoItemInterface, PeriodItemInterface } from '../types';
 import useInfoAnimationVariables from '../hooks/useInfoAnimationVariables';
 
 const Home: FC = () => {
+  const [isFirstAppear, setIsFirstAppear] = useState(true);
   const [prevPeriod, setPrevPeriod] = useState<Periods | null>(null);
   const [period, setPeriod] = useState(periodsData[Periods.Viking]);
   const [subject, setSubject] = useState(Subjects.History);
@@ -41,6 +42,12 @@ const Home: FC = () => {
   const [infoAnimationVariant, setInfoAnimationVariant] = useState<Variants>(
     infoAnimationVariablesSlideFromRight
   );
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsFirstAppear(false);
+    }, 1000);
+  }, []);
 
   useEffect(() => {
     if (country) {
@@ -161,7 +168,7 @@ const Home: FC = () => {
         handleCountryChange={handleCountryChange}
       />
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial>
         <Arrow
           key={country ? subject : period.name}
           isLeftSection={
@@ -182,19 +189,19 @@ const Home: FC = () => {
         )}
       </AnimatePresence>
 
-      <AnimatePresence initial={false}>
-        <PeriodSwitcher
-          isCountry={!!country}
-          prevPeriod={prevPeriod}
-          activePeriodName={period.name}
-          handlePeriodChange={handlePeriodChange}
-        />
-      </AnimatePresence>
+      <PeriodSwitcher
+        isFirstAppear={isFirstAppear}
+        isCountry={!!country}
+        prevPeriod={prevPeriod}
+        activePeriodName={period.name}
+        handlePeriodChange={handlePeriodChange}
+      />
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         {!currentInfo ? (
           <PeriodItem
             key={period.imagePath}
+            isFirstAppear={isFirstAppear}
             isLeftSection={period.name === Periods.Viking}
             isCountry={!!country}
             periodAnimateX={periodAnimateX}

@@ -8,6 +8,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 import './PeriodSwitcher.scss';
 
 interface PeriodSwitcherProps {
+  isFirstAppear: boolean;
   isCountry: boolean;
   prevPeriod: Periods | null;
   activePeriodName: string;
@@ -15,6 +16,7 @@ interface PeriodSwitcherProps {
 }
 
 const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
+  isFirstAppear,
   isCountry,
   prevPeriod,
   activePeriodName,
@@ -72,6 +74,10 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   };
 
   const variants = {
+    firstAppearAnimate: {
+      opacity: 1,
+      transition: { duration: 0.5, delay: 0.8 },
+    },
     noCountryAnimate: (period: Periods) => ({
       left: getNoCountryLeftPositionAnimate(period),
       transition: { delay: 0.5, duration: TRANSITIONS.DURATION.slide },
@@ -95,22 +101,24 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
       return 'noCountryAnimate';
     }
 
-    return undefined;
+    return 'firstAppearAnimate';
   };
 
   return (
-    <>
+    <div>
       {Object.values(Periods).map((period) => (
         <m.h2
           key={period}
           variants={variants}
           custom={period}
+          initial={{ opacity: isFirstAppear ? 0 : 1 }}
           animate={getAnimateVariant(period)}
           transition={{
             duration: TRANSITIONS.DURATION.slide,
           }}
           className={clsx('period-switcher', {
             active: activePeriodName === period,
+            disabled: isFirstAppear,
             right: period === Periods.Assimilation,
           })}
           onClick={() => handlePeriodChange(periodsData[period])}
@@ -118,7 +126,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
           {period}
         </m.h2>
       ))}
-    </>
+    </div>
   );
 };
 

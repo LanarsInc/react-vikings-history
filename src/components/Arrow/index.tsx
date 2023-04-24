@@ -18,7 +18,7 @@ const Arrow: FC<ArrowProps> = ({ handleArrowClick, isLeftSection }) => {
       }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 1, duration: 0.5 }}
+      transition={{ delay: 0.8, duration: 0.5 }}
       className={clsx('arrow', {
         left: !isLeftSection,
       })}
