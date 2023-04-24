@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
-import WheelImage from '../../../assets/images/wheel.png';
+import WheelImage from '../../../assets/images/wheel.webp';
 import './FullScreenLoader.scss';
 
 const FullScreenLoader: FC = () => {
