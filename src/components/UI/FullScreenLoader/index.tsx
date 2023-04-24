@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
-import WheelImage from '../../../assets/images/wheel.webp';
+import { ReactComponent as WheelIcon } from '../../../assets/icons/wheel.svg';
 import './FullScreenLoader.scss';
 
 const FullScreenLoader: FC = () => {
@@ -22,13 +22,9 @@ const FullScreenLoader: FC = () => {
           repeat: Infinity,
           repeatDelay: 0.5,
         }}
-        className="full-screen-loader__image-wrapper"
+        className="full-screen-loader__svg-wrapper"
       >
-        <img
-          className="full-screen-loader__image"
-          src={WheelImage}
-          alt="helmet"
-        />
+        <WheelIcon className="full-screen-loader__svg" />
       </m.div>
     </m.div>
   );
