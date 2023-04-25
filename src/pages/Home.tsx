@@ -2,8 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import { AnimatePresence, Variants } from 'framer-motion';
 import Logo from '../components/Logo';
 import Arrow from '../components/Arrow';
-import NavBar from '../components/NavBar';
-import BurgerMenu from '../components/BurgerMenu';
 import PeriodSwitcher from '../components/PeriodSwitcher';
 import SubjectSwitcher from '../components/SubjectSwitcher';
 import PeriodItem from './PeriodItem';
@@ -12,6 +10,10 @@ import { Countries, MENU_TIMEOUT_DELAY, Periods, Subjects } from '../constants';
 import { data, periodsData } from '../data';
 import { InfoItemInterface, PeriodItemInterface } from '../types';
 import useInfoAnimationVariables from '../hooks/useInfoAnimationVariables';
+
+// load lazy
+const BurgerMenu = React.lazy(() => import('../components/BurgerMenu'));
+const NavBar = React.lazy(() => import('../components/NavBar'));
 
 const Home: FC = () => {
   const [isFirstAppear, setIsFirstAppear] = useState(true);
