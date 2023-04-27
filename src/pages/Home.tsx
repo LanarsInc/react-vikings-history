@@ -153,6 +153,10 @@ const Home: FC = () => {
 
   const handleLogoClick = () => {
     handlePeriodChange(periodsData[period.name]);
+
+    if (isMenuOpen) {
+      setMenuIsOpen(false);
+    }
   };
 
   return (

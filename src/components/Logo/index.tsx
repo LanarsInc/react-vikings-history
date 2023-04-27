@@ -39,7 +39,7 @@ const Logo: FC<LogoProps> = ({ isMenuOpen, handleLogoClick }) => {
         onClick={handleLogoClick}
       >
         <h1 className="logo__title">Vikings</h1>
-        <p className="logo__subtitle">Historical overview</p>
+        <h2 className="logo__subtitle">Historical overview</h2>
       </m.div>
     </m.div>
   );

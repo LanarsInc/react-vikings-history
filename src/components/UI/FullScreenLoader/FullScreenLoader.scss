@@ -5,7 +5,8 @@
   position: fixed;
   background-color: $purple;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
   z-index: 25;
 
   &__content {

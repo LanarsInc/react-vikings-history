@@ -107,7 +107,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
   return (
     <div>
       {Object.values(Periods).map((period) => (
-        <m.h2
+        <m.h3
           key={period}
           variants={variants}
           custom={period}
@@ -124,7 +124,7 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
           onClick={() => handlePeriodChange(periodsData[period])}
         >
           {period}
-        </m.h2>
+        </m.h3>
       ))}
     </div>
   );

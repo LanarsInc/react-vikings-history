@@ -38,7 +38,7 @@ const SubjectSwitcher: FC<SubjectSwitcherProps> = ({
   return (
     <>
       {Object.values(Subjects).map((subject) => (
-        <m.h3
+        <m.h4
           key={subject}
           initial={{
             x: '250%',
@@ -68,7 +68,7 @@ const SubjectSwitcher: FC<SubjectSwitcherProps> = ({
           onClick={() => onSubjectClick(subject)}
         >
           {subject}
-        </m.h3>
+        </m.h4>
       ))}
     </>
   );

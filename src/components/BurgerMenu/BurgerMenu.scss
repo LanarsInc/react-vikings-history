@@ -42,7 +42,8 @@
     position: absolute;
     inset: 0;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    height: 100svh;
   }
 
   &__content {
