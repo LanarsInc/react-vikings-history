@@ -10,6 +10,7 @@ import { Countries, MENU_TIMEOUT_DELAY, Periods, Subjects } from '../constants';
 import { data, periodsData } from '../data';
 import { InfoItemInterface, PeriodItemInterface } from '../types';
 import useInfoAnimationVariables from '../hooks/useInfoAnimationVariables';
+import './Home.scss';
 
 // load lazy
 const BurgerMenu = React.lazy(() => import('../components/BurgerMenu'));
