@@ -1,30 +1,36 @@
 @font-face {
   font-family: 'Namu';
+  font-display: swap;
   src: local('Namu'), url(../../assets/fonts/Namu/Namu.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'RobotoSerif-RegularItalic';
+  font-display: swap;
   src: local('RobotoSerif-RegularItalic'), url(../../assets/fonts/RobotoSerif/RobotoSerif-RegularItalic.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'RobotoSlab-SemiBold';
+  font-display: swap;
   src: local('RobotoSlab-SemiBold'), url(../../assets/fonts/RobotoSlab/RobotoSlab-SemiBold.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'RobotoSlab-ExtraBold';
+  font-display: swap;
   src: local('RobotoSlab-ExtraBold'), url(../../assets/fonts/RobotoSlab/RobotoSlab-ExtraBold.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'SkModernist-Regular';
+  font-display: swap;
   src: local('SkModernist-Regular'), url(../../assets/fonts/SkModernist/Sk-Modernist-Regular.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'SkModernist-Bold';
+  font-display: swap;
   src: local('SkModernist-Bold'), url(../../assets/fonts/SkModernist/Sk-Modernist-Bold.otf) format('opentype');
 }
 
