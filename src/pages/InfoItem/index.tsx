@@ -22,19 +22,14 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       animate="mainAnimate"
       exit="mainExit"
       className="info-item"
-      style={{
-        backgroundColor: primaryColor,
-        backgroundImage: `-webkit-image-set(
-          url(${imagePathSmall}) 1x,
-          url(${imagePath}) 2x)`,
-      }}
+      style={{ backgroundColor: primaryColor }}
     >
-      {/* For optimization purpose */}
       <img
-        srcSet={`${imagePathSmall}, ${imagePath}`}
+        srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+        src={imagePath}
         loading="lazy"
-        style={{ display: 'none' }}
-        alt="img"
+        className="info-item__image"
+        alt="vikings info img"
       />
       <div className="info-item__content">
         <m.div
@@ -43,13 +38,16 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
           animate="contentBgAnimate"
           exit="contentBgExit"
           className="info-item__content-bg"
-          style={{
-            backgroundColor: secondaryColor,
-            backgroundImage: `-webkit-image-set(
-              url(${imagePathSmall}) 1x,
-              url(${imagePath}) 2x)`,
-          }}
-        />
+          style={{ backgroundColor: secondaryColor }}
+        >
+          <img
+            srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+            src={imagePath}
+            loading="lazy"
+            className="info-item__image"
+            alt="vikings info img"
+          />
+        </m.div>
       </div>
       <article className="info-item__article">
         {Object.keys(textBlocks).map((position) => (

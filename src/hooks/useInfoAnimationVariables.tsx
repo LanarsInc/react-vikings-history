@@ -45,14 +45,19 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       clipPath: 'inset(0 0 0 0)',
       transition: {
         delay: 0.2,
-        duration: 1,
+        duration: 1.1,
+        ease: TRANSITIONS.EASE.slide,
       },
     },
     contentBgExit: {
       clipPath: 'inset(0 100% 0 0)',
       backgroundColor: periodsData[activePeriodName].secondaryColor,
       transition: {
-        clipPath: { delay: 0, duration: 1 },
+        clipPath: {
+          delay: 0,
+          duration: 1,
+          ease: TRANSITIONS.EASE.slide,
+        },
         backgroundColor: getBackgroundColorTransition(0.2),
       },
     },
@@ -99,6 +104,7 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     contentBgAnimate: {
       clipPath: 'inset(0 0 0 0)',
       transition: {
+        ease: TRANSITIONS.EASE.slide,
         delay: 0.5,
         duration: TRANSITIONS.DURATION.slide,
       },
@@ -107,7 +113,10 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       clipPath: 'inset(0 100% 0 0)',
       transition: {
         backgroundColor: getBackgroundColorTransition(),
-        clipPath: { duration: 0.5 },
+        clipPath: {
+          ease: TRANSITIONS.EASE.slide,
+          duration: 0.5,
+        },
       },
     },
     textInitial: {
@@ -153,6 +162,7 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
     contentBgAnimate: {
       clipPath: 'inset(0 0 0 0)',
       transition: {
+        ease: TRANSITIONS.EASE.slide,
         delay: 0.5,
         duration: TRANSITIONS.DURATION.slide,
       },
@@ -162,6 +172,7 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       transition: {
         backgroundColor: getBackgroundColorTransition(),
         clipPath: {
+          ease: TRANSITIONS.EASE.slide,
           duration: 0.5,
         },
       },

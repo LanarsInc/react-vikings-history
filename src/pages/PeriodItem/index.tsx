@@ -72,20 +72,23 @@ const PeriodItem: FC<PeriodItemProps> = ({
     contentAnimated: {
       clipPath: isLeftSection ? 'inset(0 0 0 0)' : 'inset(0 0 0 15%)',
       transition: {
-        delay: isSlideAfterCountry ? 0 : 1,
-        duration: isSlideAfterCountry ? 0 : 0.5,
+        delay: isSlideAfterCountry ? 0 : 0.9,
+        duration: isSlideAfterCountry ? 0 : 1.3,
       },
     },
     contentBgInitial: {
-      clipPath: isLeftSection ? 'inset(0 0 0 100%)' : 'inset(0 0 0 0)',
+      clipPath:
+        isSlideAfterCountry || isLeftSection
+          ? 'inset(0 0 0 100%)'
+          : 'inset(0 0 0 0)',
     },
     contentBgAnimated: {
-      backgroundPosition: !isLeftSection ? '0 0' : '-15vw 0vw',
       clipPath: 'inset(0 0 0 0)',
       transition: {
         clipPath: {
+          ease: TRANSITIONS.EASE.slide,
           delay: isSlideAfterCountry || isFirstAppear ? 0.2 : 0.5,
-          duration: 1,
+          duration: 1.1,
         },
       },
     },
@@ -97,7 +100,8 @@ const PeriodItem: FC<PeriodItemProps> = ({
       backgroundColor: nextColors.secondaryColor,
       transition: {
         clipPath: {
-          duration: isSlideAfterCountry ? 1 : 1.5,
+          ease: TRANSITIONS.EASE.slide,
+          duration: isSlideAfterCountry ? 1 : 0.95,
         },
         backgroundColor: {
           delay: isCountry ? 0 : TRANSITIONS.DELAY.backgroundColor,
@@ -114,13 +118,15 @@ const PeriodItem: FC<PeriodItemProps> = ({
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay: isSlideAfterCountry || isFirstAppear ? 0.5 : 1,
+        delay: isFirstAppear ? 0.5 : 1,
       },
     },
     quotationExit: {
       x: '-100%',
       opacity: 0,
-      transition: { duration: 0.5 },
+      transition: {
+        duration: 0.5,
+      },
     },
   };
 
@@ -131,19 +137,14 @@ const PeriodItem: FC<PeriodItemProps> = ({
       animate="mainAnimated"
       exit="mainExit"
       className="period-item"
-      style={{
-        backgroundColor: primaryColor,
-        backgroundImage: `-webkit-image-set(
-          url(${imagePathSmall}) 1x,
-          url(${imagePath}) 2x)`,
-      }}
+      style={{ backgroundColor: primaryColor }}
     >
-      {/* For optimization purpose */}
       <img
-        srcSet={`${imagePathSmall}, ${imagePath}`}
+        srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+        src={imagePath}
         loading="lazy"
-        style={{ display: 'none' }}
-        alt="img"
+        className="period-item__image"
+        alt="vikings period img"
       />
       <m.div
         variants={variants}
@@ -157,13 +158,16 @@ const PeriodItem: FC<PeriodItemProps> = ({
           animate="contentBgAnimated"
           exit="contentBgExit"
           className="period-item__content-bg"
-          style={{
-            backgroundColor: secondaryColor,
-            backgroundImage: `-webkit-image-set(
-              url(${imagePathSmall}) 1x,
-              url(${imagePath}) 2x)`,
-          }}
-        />
+          style={{ backgroundColor: secondaryColor }}
+        >
+          <img
+            srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+            src={imagePath}
+            loading="lazy"
+            className="period-item__image"
+            alt="vikings period img"
+          />
+        </m.div>
       </m.div>
       <m.blockquote
         key={quotationText}
@@ -173,9 +177,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
         exit="quotationExit"
         className="period-item__quotation"
       >
-        <p className="period-item__quotation-text">
-          {quotationText}
-        </p>
+        <p className="period-item__quotation-text">{quotationText}</p>
         <p className="period-item__quotation-author">{quotationAuthor}</p>
       </m.blockquote>
     </m.section>
