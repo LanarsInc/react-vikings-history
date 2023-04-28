@@ -9,6 +9,7 @@ export const periodsData: PeriodsDataInterface = {
     secondaryColor: '#3D006C',
     imagePath: images.VikingAgeImage,
     imagePathSmall: images.VikingAgeImageSmall,
+    imagePathPlaceholder: images.VikingAgeImagePlaceholder,
     quotationText:
       '“ The Vikings were a fascinating people, whose legacy still echoes through history today ”',
     quotationAuthor: 'Judith Jesch',
@@ -19,6 +20,7 @@ export const periodsData: PeriodsDataInterface = {
     secondaryColor: '#2A51B6',
     imagePath: images.AssimilationImage,
     imagePathSmall: images.AssimilationImageSmall,
+    imagePathPlaceholder: images.AssimilationImagePlaceholder,
     quotationText:
       '“ The Vikings were conquerors of the sea, the masters of the sword and builders of empires ”',
     quotationAuthor: 'Magnus Magnusson',

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
 import { SHIFT_DELAY, TRANSITIONS } from '../../constants';
+import ProgressiveImg from '../../components/ProgressiveImg';
 import './PeriodItem.scss';
 
 interface PeriodItemProps {
@@ -16,6 +17,7 @@ interface PeriodItemProps {
   secondaryColor: string;
   imagePath: string;
   imagePathSmall: string;
+  imagePathPlaceholder: string;
   quotationText: string;
   quotationAuthor: string;
   setIsMainImageLoaded: (state: boolean) => void;
@@ -31,6 +33,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
   secondaryColor,
   imagePath,
   imagePathSmall,
+  imagePathPlaceholder,
   quotationText,
   quotationAuthor,
   setIsMainImageLoaded,
@@ -141,12 +144,11 @@ const PeriodItem: FC<PeriodItemProps> = ({
       className="period-item"
       style={{ backgroundColor: primaryColor }}
     >
-      <img
-        srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+      <ProgressiveImg
+        placeholderSrc={imagePathPlaceholder}
         src={imagePath}
-        onLoad={() => setIsMainImageLoaded(true)}
-        className="period-item__image"
         alt="vikings period img"
+        setIsMainImageLoaded={setIsMainImageLoaded}
       />
       <m.div
         variants={variants}
@@ -162,11 +164,11 @@ const PeriodItem: FC<PeriodItemProps> = ({
           className="period-item__content-bg"
           style={{ backgroundColor: secondaryColor }}
         >
-          <img
-            srcSet={`${imagePathSmall}, ${imagePath} 2x`}
+          <ProgressiveImg
+            placeholderSrc={imagePathPlaceholder}
             src={imagePath}
-            className="period-item__image"
             alt="vikings period img"
+            setIsMainImageLoaded={setIsMainImageLoaded}
           />
         </m.div>
       </m.div>

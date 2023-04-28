@@ -6,6 +6,7 @@ export interface PeriodItemInterface {
   secondaryColor: string;
   imagePath: string;
   imagePathSmall: string;
+  imagePathPlaceholder: string;
   quotationText: string;
   quotationAuthor: string;
 }

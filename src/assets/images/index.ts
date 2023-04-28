@@ -1,8 +1,10 @@
 import VikingAgeImage from './VikingAge/main.webp';
 import VikingAgeImageSmall from './VikingAge/small-main.webp';
+import VikingAgeImagePlaceholder from './VikingAge/placeholder-main.webp';
 
 import AssimilationImage from './Assimilation/main.webp';
 import AssimilationImageSmall from './Assimilation/small-main.webp';
+import AssimilationImagePlaceholder from './Assimilation/placeholder-main.webp';
 
 import VikingAgeHistoryNorwayImage from './VikingAge/History/norway.webp';
 import VikingAgeHistoryNorwayImageSmall from './VikingAge/History/small-norway.webp';
@@ -83,6 +85,8 @@ export const ImageUrls = {
 };
 
 export const images = {
+  VikingAgeImagePlaceholder,
+  AssimilationImagePlaceholder,
   ...SmallImageUrls,
   ...ImageUrls,
 };
