@@ -61,7 +61,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
           duration: TRANSITIONS.DURATION.slide,
         },
         backgroundColor: {
-          delay: TRANSITIONS.DELAY.backgroundColor,
+          delay: isCountry ? 0.2 : TRANSITIONS.DELAY.backgroundColor,
           duration: TRANSITIONS.DURATION.backgroundColor,
         },
       },
@@ -104,7 +104,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
           duration: isSlideAfterCountry ? 1 : 0.95,
         },
         backgroundColor: {
-          delay: isCountry ? 0 : TRANSITIONS.DELAY.backgroundColor,
+          delay: isCountry ? 0.2 : TRANSITIONS.DELAY.backgroundColor,
           duration: TRANSITIONS.DURATION.backgroundColor,
         },
       },

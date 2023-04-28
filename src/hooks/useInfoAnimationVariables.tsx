@@ -35,7 +35,7 @@ function useInfoAnimationVariables(activePeriodName: Periods) {
       backgroundColor: periodsData[activePeriodName].primaryColor,
       transition: {
         x: getSlideTransition(SHIFT_DELAY, 0.2),
-        backgroundColor: getBackgroundColorTransition(),
+        backgroundColor: getBackgroundColorTransition(0.2),
       },
     },
     contentBgInitial: {
