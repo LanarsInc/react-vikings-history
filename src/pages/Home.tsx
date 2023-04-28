@@ -16,7 +16,11 @@ import './Home.scss';
 const BurgerMenu = React.lazy(() => import('../components/BurgerMenu'));
 const NavBar = React.lazy(() => import('../components/NavBar'));
 
-const Home: FC = () => {
+interface HomeProps {
+  setIsMainImageLoaded: (state: boolean) => void;
+}
+
+const Home: FC<HomeProps> = ({ setIsMainImageLoaded }) => {
   const [isFirstAppear, setIsFirstAppear] = useState(true);
   const [prevPeriod, setPrevPeriod] = useState<Periods | null>(null);
   const [period, setPeriod] = useState(periodsData[Periods.Viking]);
@@ -219,6 +223,7 @@ const Home: FC = () => {
             imagePathSmall={period.imagePathSmall}
             quotationText={period.quotationText}
             quotationAuthor={period.quotationAuthor}
+            setIsMainImageLoaded={setIsMainImageLoaded}
           />
         ) : (
           <InfoItem

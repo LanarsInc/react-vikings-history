@@ -18,6 +18,7 @@ interface PeriodItemProps {
   imagePathSmall: string;
   quotationText: string;
   quotationAuthor: string;
+  setIsMainImageLoaded: (state: boolean) => void;
 }
 
 const PeriodItem: FC<PeriodItemProps> = ({
@@ -32,6 +33,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
   imagePathSmall,
   quotationText,
   quotationAuthor,
+  setIsMainImageLoaded,
 }) => {
   const isSlideAfterCountry = periodAnimateX === '-100%';
 
@@ -142,6 +144,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       <img
         srcSet={`${imagePathSmall}, ${imagePath} 2x`}
         src={imagePath}
+        onLoad={() => setIsMainImageLoaded(true)}
         className="period-item__image"
         alt="vikings period img"
       />
