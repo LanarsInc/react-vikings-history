@@ -142,7 +142,6 @@ const PeriodItem: FC<PeriodItemProps> = ({
       <img
         srcSet={`${imagePathSmall}, ${imagePath} 2x`}
         src={imagePath}
-        loading="lazy"
         className="period-item__image"
         alt="vikings period img"
       />
@@ -163,7 +162,6 @@ const PeriodItem: FC<PeriodItemProps> = ({
           <img
             srcSet={`${imagePathSmall}, ${imagePath} 2x`}
             src={imagePath}
-            loading="lazy"
             className="period-item__image"
             alt="vikings period img"
           />

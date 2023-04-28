@@ -27,7 +27,6 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       <img
         srcSet={`${imagePathSmall}, ${imagePath} 2x`}
         src={imagePath}
-        loading="lazy"
         className="info-item__image"
         alt="vikings info img"
       />
@@ -43,7 +42,6 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
           <img
             srcSet={`${imagePathSmall}, ${imagePath} 2x`}
             src={imagePath}
-            loading="lazy"
             className="info-item__image"
             alt="vikings info img"
           />
