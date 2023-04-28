@@ -2,13 +2,13 @@
 
 .subject-switcher {
   position: absolute;
-  bottom: 80vh;
-  bottom: 76svh;
+  top: 13vh;
+  top: 13svh;
   left: 4vw;
   text-stroke: 1px white;
   -webkit-text-stroke: 1px white;
   color: transparent;
-  font-size: 48px;
+  font-size: 42px;
   font-family: $font-title-extra-bold;
   white-space: nowrap;
   word-break: keep-all;
@@ -19,10 +19,12 @@
 
   @include mq(extraSmall) {
     left: 8vw;
+    font-size: 48px;
   }
 
   @include mq(small) {
     font-size: 100px;
+    top: unset;
     bottom: 12vh;
   }
 

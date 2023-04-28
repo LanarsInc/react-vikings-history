@@ -2,8 +2,8 @@
 
 .period-switcher {
   position: absolute;
-  bottom: 80vh;
-  bottom: 76svh;
+  top: 13vh;
+  top: 13svh;
   left: 4vw;
   text-stroke: 1px white;
   -webkit-text-stroke: 1px white;
@@ -24,6 +24,7 @@
 
   @include mq(small) {
     font-size: 100px;
+    top: unset;
     bottom: 12vh;
   }
 

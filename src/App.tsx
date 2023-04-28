@@ -26,7 +26,11 @@ const App: FC = () => {
   return (
     <>
       <AnimatePresence>
-        {!isImagesLoaded ? <FullScreenLoader /> : <Home key="home" />}
+        {!isImagesLoaded ? (
+          <FullScreenLoader key="loader" />
+        ) : (
+          <Home key="home" />
+        )}
       </AnimatePresence>
 
       <ImagesLoader setIsImagesLoaded={setIsImagesLoaded} urls={urls} />
