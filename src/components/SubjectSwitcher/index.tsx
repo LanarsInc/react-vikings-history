@@ -2,7 +2,6 @@ import React, { FC, useState } from 'react';
 import { motion as m } from 'framer-motion';
 import clsx from 'clsx';
 import { Subjects } from '../../constants';
-import './SubjectSwitcher.scss';
 
 interface SubjectSwitcherProps {
   activeSubject: Subjects;
@@ -60,7 +59,7 @@ const SubjectSwitcher: FC<SubjectSwitcherProps> = ({
               delay: subject === Subjects.Culture ? 0.1 : 0,
             },
           }}
-          className={clsx('subject-switcher', {
+          className={clsx('switcher', {
             active: subject === activeSubject,
             disabled: isDisabled,
             culture: subject === Subjects.Culture,

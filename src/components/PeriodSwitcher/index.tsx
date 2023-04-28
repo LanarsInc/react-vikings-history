@@ -5,7 +5,6 @@ import { BreakPoints, Periods, TRANSITIONS } from '../../constants';
 import { periodsData } from '../../data';
 import { PeriodItemInterface } from '../../types';
 import useWindowSize from '../../hooks/useWindowSize';
-import './PeriodSwitcher.scss';
 
 interface PeriodSwitcherProps {
   isFirstAppear: boolean;
@@ -116,10 +115,10 @@ const PeriodSwitcher: FC<PeriodSwitcherProps> = ({
           transition={{
             duration: TRANSITIONS.DURATION.slide,
           }}
-          className={clsx('period-switcher', {
+          className={clsx('switcher', {
             active: activePeriodName === period,
             disabled: isFirstAppear,
-            right: period === Periods.Assimilation,
+            assimilation: period === Periods.Assimilation,
           })}
           onClick={() => handlePeriodChange(periodsData[period])}
         >

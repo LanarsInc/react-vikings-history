@@ -220,7 +220,6 @@ const Home: FC<HomeProps> = ({ setIsMainImageLoaded }) => {
             primaryColor={period.primaryColor}
             secondaryColor={period.secondaryColor}
             imagePath={period.imagePath}
-            imagePathSmall={period.imagePathSmall}
             imagePathPlaceholder={period.imagePathPlaceholder}
             quotationText={period.quotationText}
             quotationAuthor={period.quotationAuthor}

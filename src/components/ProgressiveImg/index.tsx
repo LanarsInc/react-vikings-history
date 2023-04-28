@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from 'react';
-import './ProgressiveImg.scss';
 
 interface ProgressiveImgProps {
   placeholderSrc: string;
@@ -25,6 +24,6 @@ const ProgressiveImg: FC<ProgressiveImgProps> = ({
     };
   }, [src]);
 
-  return <img {...{ src: imgSrc }} className="progressive-image" alt={alt} />;
+  return <img {...{ src: imgSrc }} className="image" alt={alt} />;
 };
 export default ProgressiveImg;

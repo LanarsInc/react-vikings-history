@@ -16,7 +16,6 @@ interface PeriodItemProps {
   primaryColor: string;
   secondaryColor: string;
   imagePath: string;
-  imagePathSmall: string;
   imagePathPlaceholder: string;
   quotationText: string;
   quotationAuthor: string;
@@ -32,7 +31,6 @@ const PeriodItem: FC<PeriodItemProps> = ({
   primaryColor,
   secondaryColor,
   imagePath,
-  imagePathSmall,
   imagePathPlaceholder,
   quotationText,
   quotationAuthor,
@@ -141,7 +139,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       initial={isFirstAppear ? undefined : 'mainInitial'}
       animate="mainAnimated"
       exit="mainExit"
-      className="period-item"
+      className="page"
       style={{ backgroundColor: primaryColor }}
     >
       <ProgressiveImg
@@ -154,14 +152,14 @@ const PeriodItem: FC<PeriodItemProps> = ({
         variants={variants}
         initial="contentInitial"
         animate="contentAnimated"
-        className="period-item__content"
+        className="page__content right"
       >
         <m.div
           variants={variants}
           initial="contentBgInitial"
           animate="contentBgAnimated"
           exit="contentBgExit"
-          className="period-item__content-bg"
+          className="page__content-bg right"
           style={{ backgroundColor: secondaryColor }}
         >
           <ProgressiveImg
@@ -178,10 +176,10 @@ const PeriodItem: FC<PeriodItemProps> = ({
         initial="quotationInitial"
         animate="quotationAnimated"
         exit="quotationExit"
-        className="period-item__quotation"
+        className="page__quotation"
       >
-        <p className="period-item__quotation-text">{quotationText}</p>
-        <p className="period-item__quotation-author">{quotationAuthor}</p>
+        <p className="page__quotation-text">{quotationText}</p>
+        <p className="page__quotation-author">{quotationAuthor}</p>
       </m.blockquote>
     </m.section>
   );

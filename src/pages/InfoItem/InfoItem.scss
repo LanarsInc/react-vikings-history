@@ -1,47 +1,6 @@
 @use './../../styles/abstracts' as *;
 
-.info-item {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  height: 100svh;
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    mix-blend-mode: exclusion;
-  }
-
-  &__content {
-    position: absolute;
-    inset: 0;
-    width: 85vw;
-    height: 92vh;
-    height: 92svh;
-    overflow: hidden;
-
-    @include mq(extraSmall) {
-      height: 88vh;
-    }
-
-    @include mq(small) {
-      height: 80vh;
-    }
-
-    @include mq(medium) {
-      height: 78vh;
-    }
-  }
-
-  &__content-bg {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-  }
-
+.page {
   &__article {
     @include scroll-style();
     overflow-y: auto;

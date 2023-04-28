@@ -21,33 +21,33 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
       initial="mainInitial"
       animate="mainAnimate"
       exit="mainExit"
-      className="info-item"
+      className="page"
       style={{ backgroundColor: primaryColor }}
     >
       <img
         srcSet={`${imagePathSmall}, ${imagePath} 2x`}
         src={imagePath}
-        className="info-item__image"
+        className="image"
         alt="vikings info img"
       />
-      <div className="info-item__content">
+      <div className="page__content">
         <m.div
           variants={variants}
           initial="contentBgInitial"
           animate="contentBgAnimate"
           exit="contentBgExit"
-          className="info-item__content-bg"
+          className="page__content-bg"
           style={{ backgroundColor: secondaryColor }}
         >
           <img
             srcSet={`${imagePathSmall}, ${imagePath} 2x`}
             src={imagePath}
-            className="info-item__image"
+            className="image"
             alt="vikings info img"
           />
         </m.div>
       </div>
-      <article className="info-item__article">
+      <article className="page__article">
         {Object.keys(textBlocks).map((position) => (
           <m.div
             key={position}
@@ -56,10 +56,10 @@ const InfoItem: FC<InfoItemPropsInterface> = ({
             initial="textInitial"
             animate="textAnimate"
             exit="textExit"
-            className="info-item__text-block"
+            className="page__text-block"
           >
             {textBlocks[position as keyof typeof textBlocks].map((text) => (
-              <p key={text} className="info-item__text">
+              <p key={text} className="page__text">
                 {text}
               </p>
             ))}

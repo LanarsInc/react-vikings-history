@@ -1,7 +1,117 @@
+@use './../styles/abstracts' as *;
+
 .home {
   position: relative;
   width: 100vw;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: exclusion;
+}
+
+.page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    width: 85vw;
+    height: 92vh;
+    height: 92svh;
+    overflow: hidden;
+
+    &.right {
+      left: unset;
+      right: 0;
+    }
+
+    @include mq(extraSmall) {
+      height: 88vh;
+    }
+
+    @include mq(small) {
+      height: 80vh;
+    }
+
+    @include mq(medium) {
+      height: 78vh;
+    }
+  }
+
+  &__content-bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+
+    &.right {
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
+.switcher {
+  position: absolute;
+  top: 13vh;
+  top: 13svh;
+  left: 4vw;
+  text-stroke: 1px white;
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+  font-size: 42px;
+  font-family: $font-title-extra-bold;
+  white-space: nowrap;
+  word-break: keep-all;
+  cursor: pointer;
+  user-select: none;
+  transition: color 500ms linear;
+  z-index: 3;
+
+  @include mq(extraSmall) {
+    left: 8vw;
+    font-size: 48px;
+  }
+
+  @include mq(small) {
+    font-size: 100px;
+    top: unset;
+    bottom: 12vh;
+  }
+
+  @include mq(medium) {
+    font-size: 140px;
+    left: 12vw;
+    bottom: 10vh;
+  }
+
+  @include mq(large) {
+    font-size: 180px;
+  }
+
+  &.culture {
+    left: 64vw;
+  }
+
+  &.assimilation {
+    left: 85vw;
+  }
+
+  &.active {
+    color: $white;
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
 }
