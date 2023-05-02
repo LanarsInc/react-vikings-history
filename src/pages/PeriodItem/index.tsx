@@ -76,7 +76,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
       clipPath: isLeftSection ? 'inset(0 0 0 0)' : 'inset(0 0 0 15%)',
       transition: {
         delay: isSlideAfterCountry ? 0 : 0.9,
-        duration: isSlideAfterCountry ? 0 : 1.3,
+        duration: isSlideAfterCountry ? 0 : 0.8,
       },
     },
     contentBgInitial: {
