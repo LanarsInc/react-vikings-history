@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import { motion as m } from 'framer-motion';
-import { SHIFT_DELAY, TRANSITIONS } from '../../constants';
+import { BreakPoints, SHIFT_DELAY, TRANSITIONS } from '../../constants';
 import ProgressiveImg from '../../components/ProgressiveImg';
+import useWindowSize from '../../hooks/useWindowSize';
 import './PeriodItem.scss';
 
 interface PeriodItemProps {
@@ -16,6 +17,7 @@ interface PeriodItemProps {
   primaryColor: string;
   secondaryColor: string;
   imagePath: string;
+  imagePathSmall: string;
   imagePathPlaceholder: string;
   quotationText: string;
   quotationAuthor: string;
@@ -31,12 +33,17 @@ const PeriodItem: FC<PeriodItemProps> = ({
   primaryColor,
   secondaryColor,
   imagePath,
+  imagePathSmall,
   imagePathPlaceholder,
   quotationText,
   quotationAuthor,
   setIsMainImageLoaded,
 }) => {
+  const { width } = useWindowSize();
   const isSlideAfterCountry = periodAnimateX === '-100%';
+  const imageSrcDependingOnScreen =
+    width > BreakPoints.EXTRA_SMALL ? imagePath : imagePathSmall;
+  const neededImageSrc = width !== 0 ? imageSrcDependingOnScreen : null;
 
   const variants = {
     mainInitial: {
@@ -144,7 +151,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
     >
       <ProgressiveImg
         placeholderSrc={imagePathPlaceholder}
-        src={imagePath}
+        src={neededImageSrc}
         alt="vikings period img"
         setIsMainImageLoaded={setIsMainImageLoaded}
       />
@@ -164,7 +171,7 @@ const PeriodItem: FC<PeriodItemProps> = ({
         >
           <ProgressiveImg
             placeholderSrc={imagePathPlaceholder}
-            src={imagePath}
+            src={neededImageSrc}
             alt="vikings period img"
             setIsMainImageLoaded={setIsMainImageLoaded}
           />
