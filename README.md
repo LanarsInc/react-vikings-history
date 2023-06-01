@@ -6,8 +6,10 @@
 # Preview
 
 ### Main preview
+https://github.com/LanarsInc/react-vikings-history/assets/40457361/345424cc-5352-4acb-a3a1-d287a7214e45
 
 ### Burger menu preview
+https://github.com/LanarsInc/react-vikings-history/assets/40457361/c097aef0-241b-43bb-a74c-ac36a0a4d354
 
 # Overview
 This repo provides implementation of static site with animated transitions using React with:
